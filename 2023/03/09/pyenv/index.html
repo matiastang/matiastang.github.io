@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Pyenv 对 Python 进行版本管理 | Matias Tang</title>
+    <meta name="generator" content="VuePress 1.9.9">
+    
+    <meta name="description" content="Pyenv 对 Python 进行版本管理">
+    
+    <link rel="preload" href="/assets/css/0.styles.82ff4c1c.css" as="style"><link rel="preload" href="/assets/js/app.73a0734d.js" as="script"><link rel="preload" href="/assets/js/6.383bd1fb.js" as="script"><link rel="preload" href="/assets/js/3.c5fb39ae.js" as="script"><link rel="preload" href="/assets/js/37.044de3dc.js" as="script"><link rel="prefetch" href="/assets/js/10.c8461d83.js"><link rel="prefetch" href="/assets/js/11.7103ea48.js"><link rel="prefetch" href="/assets/js/12.0ffc461f.js"><link rel="prefetch" href="/assets/js/13.66b359e8.js"><link rel="prefetch" href="/assets/js/14.62c2e1cf.js"><link rel="prefetch" href="/assets/js/15.ae71adf7.js"><link rel="prefetch" href="/assets/js/16.04a2da67.js"><link rel="prefetch" href="/assets/js/17.7ddaa3ab.js"><link rel="prefetch" href="/assets/js/18.9a12f63b.js"><link rel="prefetch" href="/assets/js/19.251198e9.js"><link rel="prefetch" href="/assets/js/20.39607cf0.js"><link rel="prefetch" href="/assets/js/21.5bed106c.js"><link rel="prefetch" href="/assets/js/22.af529764.js"><link rel="prefetch" href="/assets/js/23.f29beaa7.js"><link rel="prefetch" href="/assets/js/24.974ebe20.js"><link rel="prefetch" href="/assets/js/25.9baf83bb.js"><link rel="prefetch" href="/assets/js/26.4e1e56cb.js"><link rel="prefetch" href="/assets/js/27.a2e42497.js"><link rel="prefetch" href="/assets/js/28.253fdba3.js"><link rel="prefetch" href="/assets/js/29.4e33fd32.js"><link rel="prefetch" href="/assets/js/30.c8564cdf.js"><link rel="prefetch" href="/assets/js/31.bd1c7d80.js"><link rel="prefetch" href="/assets/js/32.e2088de6.js"><link rel="prefetch" href="/assets/js/33.55dcece3.js"><link rel="prefetch" href="/assets/js/34.975e9485.js"><link rel="prefetch" href="/assets/js/35.cd5140c6.js"><link rel="prefetch" href="/assets/js/36.afe80a70.js"><link rel="prefetch" href="/assets/js/38.6738bf81.js"><link rel="prefetch" href="/assets/js/39.7af5e2e7.js"><link rel="prefetch" href="/assets/js/4.465c8454.js"><link rel="prefetch" href="/assets/js/40.4c268aec.js"><link rel="prefetch" href="/assets/js/41.16947aeb.js"><link rel="prefetch" href="/assets/js/42.086e13c7.js"><link rel="prefetch" href="/assets/js/43.37da2973.js"><link rel="prefetch" href="/assets/js/44.51618db1.js"><link rel="prefetch" href="/assets/js/45.431a59b8.js"><link rel="prefetch" href="/assets/js/46.1c09406f.js"><link rel="prefetch" href="/assets/js/47.49f21001.js"><link rel="prefetch" href="/assets/js/48.291c9e65.js"><link rel="prefetch" href="/assets/js/49.9d4360a0.js"><link rel="prefetch" href="/assets/js/5.8cda2127.js"><link rel="prefetch" href="/assets/js/50.811d17b1.js"><link rel="prefetch" href="/assets/js/51.0ad84238.js"><link rel="prefetch" href="/assets/js/52.193b2983.js"><link rel="prefetch" href="/assets/js/53.88b4fcd2.js"><link rel="prefetch" href="/assets/js/54.c1138869.js"><link rel="prefetch" href="/assets/js/55.2e600288.js"><link rel="prefetch" href="/assets/js/56.391a0aa7.js"><link rel="prefetch" href="/assets/js/57.8cd38724.js"><link rel="prefetch" href="/assets/js/58.2725d985.js"><link rel="prefetch" href="/assets/js/59.62cdc609.js"><link rel="prefetch" href="/assets/js/60.561b356b.js"><link rel="prefetch" href="/assets/js/61.3a83b170.js"><link rel="prefetch" href="/assets/js/62.587d01ed.js"><link rel="prefetch" href="/assets/js/63.65991321.js"><link rel="prefetch" href="/assets/js/64.4ec8165a.js"><link rel="prefetch" href="/assets/js/65.41b05749.js"><link rel="prefetch" href="/assets/js/66.8327f787.js"><link rel="prefetch" href="/assets/js/67.73bbf5bb.js"><link rel="prefetch" href="/assets/js/68.602d3bad.js"><link rel="prefetch" href="/assets/js/69.dbb9187f.js"><link rel="prefetch" href="/assets/js/7.05753621.js"><link rel="prefetch" href="/assets/js/70.48f6e1ba.js"><link rel="prefetch" href="/assets/js/71.97ac2204.js"><link rel="prefetch" href="/assets/js/72.3ae72523.js"><link rel="prefetch" href="/assets/js/8.5ddd4425.js"><link rel="prefetch" href="/assets/js/9.521c2bf3.js"><link rel="prefetch" href="/assets/js/vuejs-paginate.bd98283b.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.82ff4c1c.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div id="vuepress-theme-blog__global-layout"><section id="header-wrapper"><header id="header"><div class="header-wrapper"><div class="title"><a href="/" class="nav-link home-link">Matias Tang </a></div> <div class="header-right-wrap"><!----> <div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></div></header></section> <div id="mobile-header"><div class="mobile-header-bar"><div class="mobile-header-title"><a href="/" class="nav-link mobile-home-link">Matias Tang </a> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></div> <div class="mobile-menu-wrapper"><hr class="menu-divider"> <!----></div></div></div> <div class="content-wrapper"><div id="vuepress-theme-blog__post-layout"><article itemscope="itemscope" itemtype="https://schema.org/BlogPosting" class="vuepress-blog-theme-content"><header><h1 itemprop="name headline" class="post-title">
+        Pyenv 对 Python 进行版本管理
+      </h1> <div class="post-meta"><div itemprop="publisher author" itemtype="http://schema.org/Person" itemscope="itemscope" class="post-meta-author"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-navigation"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg> <span itemprop="name">matias tang</span> <span itemprop="address">   in Chengdu</span></div> <div class="post-meta-date"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> <time pubdate itemprop="datePublished" datetime="2023-03-09T00:00:00.000Z">
+      Thu Mar 09 2023
+    </time></div> <ul itemprop="keywords" class="post-meta-tags"><li class="post-tag" data-v-42ccfcd5><a href="/tag/Python" data-v-42ccfcd5><span data-v-42ccfcd5>Python</span></a></li><li class="post-tag" data-v-42ccfcd5><a href="/tag/Pyenv" data-v-42ccfcd5><span data-v-42ccfcd5>Pyenv</span></a></li><li class="post-tag" data-v-42ccfcd5><a href="/tag/Anaconda" data-v-42ccfcd5><span data-v-42ccfcd5>Anaconda</span></a></li><li class="post-tag" data-v-42ccfcd5><a href="/tag/miniconda" data-v-42ccfcd5><span data-v-42ccfcd5>miniconda</span></a></li><li class="post-tag" data-v-42ccfcd5><a href="/tag/conda" data-v-42ccfcd5><span data-v-42ccfcd5>conda</span></a></li></ul></div></header> <div itemprop="articleBody" class="content__default"><h1 id="pyenv"><a href="#pyenv" class="header-anchor">#</a> pyenv</h1> <p><a href="https://cdn.modb.pro/db/29564" target="_blank" rel="noopener noreferrer">pip,pipenv,pyenv<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p><a href="https://github.com/pyenv/pyenv-installer" target="_blank" rel="noopener noreferrer">Github-pyenv-installer<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> <a href="https://www.python.org/downloads/source/" target="_blank" rel="noopener noreferrer">python版本下载地址<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> <a href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fpyenv%2Fpyenv" target="_blank" rel="noopener noreferrer">pyenv的github地址<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> <a href="https://link.zhihu.com/?target=https%3A//github.com/pyenv/pyenv-virtualenv.git" target="_blank" rel="noopener noreferrer">pyenv-vitualenv插件地址<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> <a href="https://zhuanlan.zhihu.com/p/36402791/" target="_blank" rel="noopener noreferrer">pyenv安装<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> <a href="https://github.com/pyenv/pyenv/wiki/Why-pyenv%3F" target="_blank" rel="noopener noreferrer">pyenv比 pythonbrew 和 pythonz 好在哪里？<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> <a href="https://github.com/pyenv/pyenv#set-up-your-shell-environment-for-pyenv" target="_blank" rel="noopener noreferrer">pyenv 官方安装<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p><code>pyenv</code>是管理<code>python</code>版本的工具。安装<code>pyenv</code>后，可以管理各种<code>python</code>版本，并且各个版本的环境完全独立，互不干扰。</p> <p><code>pyenv</code>是一个<code>forked</code>自<code>ruby</code>社区的简单、低调、遵循<code>UNIX</code>哲学的<code>Python</code>环境管理工具, 它可以轻松切换全局解释器版本, 同时结合<code>vitualenv</code>插件可以方便的管理对应的包源。</p> <h2 id="安装"><a href="#安装" class="header-anchor">#</a> 安装</h2> <ul><li>查看<code>pyenv</code>版本</li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code>$ pyenv version
+zsh: <span class="token builtin class-name">command</span> not found: pyenv
+</code></pre></div><p>没发现<code>pyenv</code>则表示没安装。</p> <ul><li>从<code>GitHub</code>拉源码</li></ul> <p><a href="https://github.com/pyenv/pyenv" target="_blank" rel="noopener noreferrer"><code>pyenv</code><span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>已经在<a href="https://github.com" target="_blank" rel="noopener noreferrer"><code>github</code><span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>上开源，我们直接从<code>github</code>上<code>clone</code>项目到本地。</p> <div class="language-sh extra-class"><pre class="language-sh"><code>$ <span class="token function">git</span> clone https://github.com/pyenv/pyenv.git ~/.pyenv
+Cloning into <span class="token string">'/Users/matias/.pyenv'</span><span class="token punctuation">..</span>.
+remote: Enumerating objects: <span class="token number">21745</span>, done.
+remote: Counting objects: <span class="token number">100</span>% <span class="token punctuation">(</span><span class="token number">503</span>/503<span class="token punctuation">)</span>, done.
+remote: Compressing objects: <span class="token number">100</span>% <span class="token punctuation">(</span><span class="token number">151</span>/151<span class="token punctuation">)</span>, done.
+remote: Total <span class="token number">21745</span> <span class="token punctuation">(</span>delta <span class="token number">369</span><span class="token punctuation">)</span>, reused <span class="token number">439</span> <span class="token punctuation">(</span>delta <span class="token number">334</span><span class="token punctuation">)</span>, pack-reused <span class="token number">21242</span>
+Receiving objects: <span class="token number">100</span>% <span class="token punctuation">(</span><span class="token number">21745</span>/21745<span class="token punctuation">)</span>, <span class="token number">4.37</span> MiB <span class="token operator">|</span> <span class="token number">57.00</span> KiB/s, done.
+Resolving deltas: <span class="token number">100</span>% <span class="token punctuation">(</span><span class="token number">14709</span>/14709<span class="token punctuation">)</span>, done.
+</code></pre></div><ul><li><code>MacOS</code>可以直接用<code>homebrew</code>安装</li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code>$ brew <span class="token function">install</span> pyenv    
+Running <span class="token variable"><span class="token variable">`</span>brew update --auto-update<span class="token variable">`</span></span><span class="token punctuation">..</span>.
+
+<span class="token punctuation">..</span>.
+
+For <span class="token function">more</span> information about Homebrew and Python, see: https://docs.brew.sh/Homebrew-and-Python
+</code></pre></div><ul><li>安装完成之后查看</li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code>$ pyenv version
+system <span class="token punctuation">(</span>set by /Users/matias/.pyenv/version<span class="token punctuation">)</span>
+</code></pre></div><p><strong>注意</strong> 如果提示<code>homebrew</code>且等待了很久，则可以<code>Control + C</code>结束<code>homebrew</code>的更新。</p> <h2 id="配置环境"><a href="#配置环境" class="header-anchor">#</a> 配置环境</h2> <ul><li>添加<code>shell</code>配置（如：<code>.zshrc</code>和<code>.bashrc</code>）</li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code>$ <span class="token function">vim</span> ./zshrc
+$ <span class="token function">sudo</span> <span class="token function">vim</span> ./zshrc
+</code></pre></div><ul><li>添加如下配置</li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token builtin class-name">export</span> <span class="token assign-left variable">PYENV_ROOR</span><span class="token operator">=</span><span class="token string">&quot;<span class="token environment constant">$HOME</span>/.pyenv&quot;</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">PATH</span></span><span class="token operator">=</span><span class="token variable">$PYENV_ROOT</span>/shims:<span class="token environment constant">$PATH</span>
+<span class="token comment"># eval &quot;$(pyenv init --path)&quot;或eval &quot;$(pyenv init -)&quot;</span>
+<span class="token builtin class-name">eval</span> <span class="token string">&quot;<span class="token variable"><span class="token variable">$(</span>pyenv init -<span class="token variable">)</span></span>&quot;</span>
+<span class="token builtin class-name">eval</span> <span class="token string">&quot;<span class="token variable"><span class="token variable">$(</span>pyenv virtualenv-init -<span class="token variable">)</span></span>&quot;</span>
+</code></pre></div><ul><li>刷新配置</li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code>$ <span class="token builtin class-name">source</span> ~/.zshrc
+$ <span class="token builtin class-name">source</span> ~/.zprofile
+</code></pre></div><p>如果您还希望在非交互式登录 <code>shell</code> 中获取 <code>Pyenv</code>，还可以将命令添加到<code>.profile</code>、<code>.zprofile</code>或<code>.zlogin</code>。</p> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token builtin class-name">echo</span> <span class="token string">'export PYENV_ROOT=&quot;$HOME/.pyenv&quot;'</span> <span class="token operator">&gt;&gt;</span> ~/.zprofile
+<span class="token builtin class-name">echo</span> <span class="token string">'export PATH=&quot;$PYENV_ROOT/bin:$PATH&quot;'</span> <span class="token operator">&gt;&gt;</span> ~/.zprofile
+<span class="token builtin class-name">echo</span> <span class="token string">'eval &quot;$(pyenv init --path)&quot;'</span> <span class="token operator">&gt;&gt;</span> ~/.zprofile
+</code></pre></div><h2 id="使用"><a href="#使用" class="header-anchor">#</a> 使用</h2> <p><strong>注意</strong>如果要通过共享库的方式安装Python，可使用如下命令：</p> <div class="language- extra-class"><pre class="language-text"><code>env PYTHON_CONFIGURE_OPTS=&quot;--enable-shared&quot; pyenv install 3.5.2
+</code></pre></div><ul><li>查看版本</li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code>$ pyenv version
+system <span class="token punctuation">(</span>set by /Users/matias/.pyenv/version<span class="token punctuation">)</span>
+</code></pre></div><ul><li>查看可安装的版本</li></ul> <div class="language- extra-class"><pre class="language-text"><code>$ pyenv install -l
+Available versions:
+  ...
+  3.10.0
+  3.10-dev
+  3.10.1
+  3.10.2
+  3.10.3
+  3.10.4
+  3.10.5
+  3.10.6
+  3.10.7
+  3.10.8
+  3.10.9
+  3.10.10
+  3.11.0
+  3.11-dev
+  3.11.1
+  3.11.2
+  3.12.0a5
+  3.12-dev
+</code></pre></div><ul><li>安装新的<code>Python</code>版本,<a href="https://github.com/pyenv/pyenv/wiki/Common-build-problems" target="_blank" rel="noopener noreferrer">遇到编译失败，可以参考官方提供的解决方案 Common-build-problems<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code>$ pyenv <span class="token function">install</span> <span class="token number">3.10</span>.5
+</code></pre></div><ul><li>查看信息</li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code>$ pyenv <span class="token function">install</span> <span class="token parameter variable">-v</span> <span class="token number">3.10</span>.5
+</code></pre></div><ul><li>查看所有版本</li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code>$ pyenv versions
+</code></pre></div><ul><li>全局使用某个版本</li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code>$ pyenv global <span class="token number">3.6</span>.12
+</code></pre></div><ul><li>查看是否切换成功</li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code>$ python <span class="token parameter variable">--version</span>
+</code></pre></div><h3 id="global、shell、local之间的区别"><a href="#global、shell、local之间的区别" class="header-anchor">#</a> <code>global</code>、<code>shell</code>、<code>local</code>之间的区别：</h3> <ul><li><code>global</code> 全局设置：如果使用此命令，可以看到所有受到<code>pyenv</code>控制的窗口都受到了影响， 所以尽可能不要用<code>root</code>用户来安装<code>pyenv</code>，否则会影响到之前的系统</li> <li><code>shell</code> 会话设置（只影响当前的会话）</li> <li><code>local</code> 本地设置（只影响所在文件夹）</li></ul> <h2 id="错误"><a href="#错误" class="header-anchor">#</a> 错误</h2> <h3 id="安装新的python版本pyenv-install-3-10-5或pyenv-install-v-3-10-5报错"><a href="#安装新的python版本pyenv-install-3-10-5或pyenv-install-v-3-10-5报错" class="header-anchor">#</a> 安装新的<code>Python</code>版本<code>pyenv install 3.10.5</code>或<code>pyenv install -v 3.10.5</code>报错</h3> <p><a href="https://github.com/pyenv/pyenv/issues/1245" target="_blank" rel="noopener noreferrer">#1245<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <div class="language- extra-class"><pre class="language-text"><code>ld: warning: ld: warning: directory not found for option '-L/Users/matias/.pyenv/versions/3.10.5/lib'directory not found for option '-L/Users/matias/.pyenv/versions/3.10.5/lib'
+
+ld: warning: directory not found for option '-L/Users/matias/.pyenv/versions/3.10.5/lib'
+ld: warning: directory not found for option '-L/Users/matias/.pyenv/versions/3.10.5/lib'
+Undefined symbols for architecture x86_64:
+  &quot;_libintl_bindtextdomain&quot;, referenced from:
+Undefined symbols for architecture x86_64:
+  &quot;_libintl_bindtextdomain&quot;, referenced from:
+      __locale_bindtextdomain in libpython3.10.a(_localemodule.o)
+      __locale_bindtextdomain in libpython3.10.a(_localemodule.o)
+  &quot;_libintl_dcgettext&quot;, referenced from:
+  &quot;_libintl_dcgettext&quot;, referenced from:
+      __locale_dcgettext in libpython3.10.a(_localemodule.o)
+  &quot;_libintl_dgettext&quot;, referenced from:
+      __locale_dcgettext in libpython3.10.a(_localemodule.o)
+      __locale_dgettext in libpython3.10.a(_localemodule.o)
+  &quot;_libintl_dgettext&quot;, referenced from:
+  &quot;_libintl_gettext&quot;, referenced from:
+      __locale_gettext in libpython3.10.a(_localemodule.o)
+      __locale_dgettext in libpython3.10.a(_localemodule.o)
+  &quot;_libintl_setlocale&quot;, referenced from:
+  &quot;_libintl_gettext&quot;, referenced from:
+      __locale_setlocale in libpython3.10.a(_localemodule.o)
+      __locale_localeconv in libpython3.10.a(_localemodule.o)
+      __locale_gettext in libpython3.10.a(_localemodule.o)
+  &quot;_libintl_textdomain&quot;, referenced from:
+  &quot;_libintl_setlocale&quot;, referenced from:
+      __locale_textdomain in libpython3.10.a(_localemodule.o)
+      __locale_setlocale in libpython3.10.a(_localemodule.o)
+      __locale_localeconv in libpython3.10.a(_localemodule.o)
+  &quot;_libintl_textdomain&quot;, referenced from:
+      __locale_textdomain in libpython3.10.a(_localemodule.o)
+ld: symbol(s) not found for architecture x86_64
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+make: *** [Programs/_testembed] Error 1
+make: *** Waiting for unfinished jobs....
+make: *** [python.exe] Error 1
+
+BUILD FAILED (OS X 11.5.1 using python-build 2.3.2-7-g16f7ea03)
+
+Inspect or clean up the working tree at /var/folders/bz/qdc41tl10s36tg71w9qdq5jh0000gn/T/python-build.20220727103447.34041
+Results logged to /var/folders/bz/qdc41tl10s36tg71w9qdq5jh0000gn/T/python-build.20220727103447.34041.log
+
+Last 10 log lines:
+      __locale_localeconv in libpython3.10.a(_localemodule.o)
+  &quot;_libintl_textdomain&quot;, referenced from:
+      __locale_textdomain in libpython3.10.a(_localemodule.o)
+ld: symbol(s) not found for architecture x86_64
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+make: *** [Programs/_testembed] Error 1
+make: *** Waiting for unfinished jobs....
+make: *** [python.exe] Error 1
+</code></pre></div><p><a href="https://github.com/pyenv/pyenv/wiki#suggested-build-environment" target="_blank" rel="noopener noreferrer">确保安装了 Python 的二进制依赖项和构建工具。<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> <a href="https://github.com/pyenv/pyenv/wiki/Common-build-problems" target="_blank" rel="noopener noreferrer">遇到编译失败，可以参考官方提供的解决方案 Common-build-problems<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p>只需为命令添加前缀：<code>AR=/usr/bin/env pyenv install ....</code> 这<code>AR</code>为调用<code>pyenv</code>. 或者（暂时）<code>brew uninstall binutils</code>，如果那是<code>ar</code>从哪里来的（你可以检查<code>which ar</code>——如果它说<code>/usr/local/bin/ar</code>你可能已经安装了 <code>binutils</code>）。</p> <div class="language-sh extra-class"><pre class="language-sh"><code>$ <span class="token function">which</span> ar
+/usr/bin/ar
+</code></pre></div><div class="language-sh extra-class"><pre class="language-sh"><code>$ <span class="token function">env</span> <span class="token assign-left variable">PYTHON_CONFIGURE_OPTS</span><span class="token operator">=</span><span class="token string">&quot;--enable-framework --enable-universalsdk --with-universal-archs=universal2&quot;</span> pyenv <span class="token function">install</span> <span class="token number">3.10</span>.5   
+python-build: use openssl@1.1 from homebrew
+python-build: use readline from homebrew
+Installing Python-3.10.5<span class="token punctuation">..</span>.
+python-build: use tcl-tk from homebrew
+python-build: use readline from homebrew
+python-build: use zlib from xcode sdk
+
+BUILD FAILED <span class="token punctuation">(</span>OS X <span class="token number">12.5</span> using python-build <span class="token number">2.3</span>.2-7-g16f7ea03<span class="token punctuation">)</span>
+
+Inspect or clean up the working tree at /var/folders/bz/qdc41tl10s36tg71w9qdq5jh0000gn/T/python-build.20220729155015.61546
+Results logged to /var/folders/bz/qdc41tl10s36tg71w9qdq5jh0000gn/T/python-build.20220729155015.61546.log
+
+Last <span class="token number">10</span> log lines:
+  <span class="token string">&quot;_libintl_gettext&quot;</span>, referenced from:
+      __locale_gettext <span class="token keyword">in</span> libpython3.10.a<span class="token punctuation">(</span>_localemodule.o<span class="token punctuation">)</span>
+  <span class="token string">&quot;_libintl_setlocale&quot;</span>, referenced from:
+      __locale_setlocale <span class="token keyword">in</span> libpython3.10.a<span class="token punctuation">(</span>_localemodule.o<span class="token punctuation">)</span>
+      __locale_localeconv <span class="token keyword">in</span> libpython3.10.a<span class="token punctuation">(</span>_localemodule.o<span class="token punctuation">)</span>
+  <span class="token string">&quot;_libintl_textdomain&quot;</span>, referenced from:
+      __locale_textdomain <span class="token keyword">in</span> libpython3.10.a<span class="token punctuation">(</span>_localemodule.o<span class="token punctuation">)</span>
+ld: symbol<span class="token punctuation">(</span>s<span class="token punctuation">)</span> not found <span class="token keyword">for</span> architecture arm64
+clang: error: linker <span class="token builtin class-name">command</span> failed with <span class="token builtin class-name">exit</span> code <span class="token number">1</span> <span class="token punctuation">(</span>use <span class="token parameter variable">-v</span> to see invocation<span class="token punctuation">)</span>
+make: *** <span class="token punctuation">[</span>Python.framework/Versions/3.10/Python<span class="token punctuation">]</span> Error <span class="token number">1</span>
+</code></pre></div><p><strong>重要</strong> 下面安装成功<code>先安装了arch -arm64 brew install pyenv-virtualenv</code>然后配置了<code>.zshrc</code>和<code>.zprofile</code></p> <h4 id="zshrc"><a href="#zshrc" class="header-anchor">#</a> .zshrc</h4> <div class="language-sh extra-class"><pre class="language-sh"><code>$ <span class="token function">cat</span> ~/.zshrc
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">PYENV_ROOT</span><span class="token operator">=</span><span class="token string">&quot;<span class="token environment constant">$HOME</span>/.pyenv&quot;</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">PATH</span></span><span class="token operator">=</span><span class="token string">&quot;<span class="token variable">$PYENV_ROOT</span>/bin:<span class="token environment constant">$PATH</span>&quot;</span>
+<span class="token builtin class-name">eval</span> <span class="token string">&quot;<span class="token variable"><span class="token variable">$(</span>pyenv init -<span class="token variable">)</span></span>&quot;</span>
+<span class="token builtin class-name">eval</span> <span class="token string">&quot;<span class="token variable"><span class="token variable">$(</span>pyenv virtualenv-init -<span class="token variable">)</span></span>&quot;</span>
+</code></pre></div><h4 id="zprofile"><a href="#zprofile" class="header-anchor">#</a> .zprofile</h4> <div class="language-sh extra-class"><pre class="language-sh"><code>$ <span class="token function">cat</span> ~/.zprofile
+<span class="token builtin class-name">eval</span> <span class="token string">&quot;<span class="token variable"><span class="token variable">$(</span>/opt/homebrew/bin/brew shellenv<span class="token variable">)</span></span>&quot;</span>
+<span class="token builtin class-name">eval</span> <span class="token string">&quot;<span class="token variable"><span class="token variable">$(</span>/opt/homebrew/bin/brew shellenv<span class="token variable">)</span></span>&quot;</span>
+
+<span class="token comment"># Created by `pipx` on 2021-09-17 05:33:24</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">PATH</span></span><span class="token operator">=</span><span class="token string">&quot;<span class="token environment constant">$PATH</span>:/Users/matias/.local/bin&quot;</span>
+<span class="token builtin class-name">eval</span> <span class="token string">&quot;<span class="token variable"><span class="token variable">$(</span>/opt/homebrew/bin/brew shellenv<span class="token variable">)</span></span>&quot;</span>
+<span class="token variable"><span class="token variable">`</span>pyenv<span class="token variable">`</span></span>主要看下面几个
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">PYENV_ROOT</span><span class="token operator">=</span><span class="token string">&quot;<span class="token environment constant">$HOME</span>/.pyenv&quot;</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">PATH</span></span><span class="token operator">=</span><span class="token string">&quot;<span class="token variable">$PYENV_ROOT</span>/bin:<span class="token environment constant">$PATH</span>&quot;</span>
+<span class="token builtin class-name">eval</span> <span class="token string">&quot;<span class="token variable"><span class="token variable">$(</span>pyenv init <span class="token parameter variable">--path</span><span class="token variable">)</span></span>&quot;</span>
+<span class="token builtin class-name">eval</span> <span class="token string">&quot;<span class="token variable"><span class="token variable">$(</span>pyenv virtualenv-init -<span class="token variable">)</span></span>&quot;</span>
+</code></pre></div><ul><li>安装<code>python 3.10.5</code></li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code>$ arch <span class="token parameter variable">-arm64</span> pyenv <span class="token function">install</span> <span class="token number">3.10</span>.5
+python-build: use openssl@1.1 from homebrew
+python-build: use readline from homebrew
+Installing Python-3.10.5<span class="token punctuation">..</span>.
+python-build: use tcl-tk from homebrew
+python-build: use readline from homebrew
+python-build: use zlib from xcode sdk
+Installed Python-3.10.5 to /Users/matias/.pyenv/versions/3.10.5
+</code></pre></div><h2 id="使用-2"><a href="#使用-2" class="header-anchor">#</a> 使用</h2> <ul><li><p>查看当前版本
+pyenv version</p></li> <li><p>查看所有版本
+pyenv versions</p></li> <li><p>查看所有可安装的版本
+pyenv install --list</p></li> <li><p>安装指定版本
+pyenv install 3.6.5</p></li> <li><p>安装新版本后rehash一下
+pyenv rehash</p></li> <li><p>删除指定版本
+pyenv uninstall 3.5.2</p></li> <li><p>指定全局版本
+pyenv global 3.6.5</p></li> <li><p>指定多个全局版本, 3版本优先
+pyenv global 3.6.5 2.7.14</p></li> <li><p>实际上当你切换版本后, 相应的pip和包仓库都是会自动切换过去的</p></li></ul> <p>pyenv commands：查看所有pyenv命令
+pyenv exec：使用特定Python版本执行某条命令
+pyenv global：设置或查看全局Python版本
+pyenv hooks：列出给出的pyenv命令的钩子脚本
+pyenv init：配置shell环境
+pyenv install：安装某个版本的Python
+pyenv local：为某个应用设置特定的Python版本
+pyenv prefix：显示对应Python版本的路径前缀
+pyenv rehash：再哈希pyenv shims（不清楚有什么用，欢迎评论补充）
+pyenv root：显示pyenv根目录
+pyenv shell：为某个shell设置特定的Python版本（与pyenv local类似）
+pyenv shims：列出当前存在的shims（pyenv的工作原理就是在一个叫shims的目录下创建Python解释器的“假版本”，寻找Python应用时先从该目录查找）
+pyenv uninstall：卸载某个版本Python
+pyenv --version：显示pyenv版本
+pyenv version：显示当前Python版本，等价于pyenv version-name+pyenv version-file
+pyenv version-file/version-name/version-origin：当前Python版本对应的文件/名字/位置
+pyenv whence：列出已安装的一个范围内的Python版本，比如列出本地安装的Python2到Python3的版本，可以使用pyenv whence 2to3
+pyenv which：列出可执行文件的绝对路径，比如pyenv which python可以列出python命令的绝对路径</p> <h2 id="pyenv安装python慢"><a href="#pyenv安装python慢" class="header-anchor">#</a> pyenv安装python慢</h2> <p><a href="https://www.freesion.com/article/12701042365/" target="_blank" rel="noopener noreferrer">pyenv安装python慢<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p>使用 pyenv 安装 python 时，默认从 python.org 下载指定版本，往往特别慢，经常下载失败，这时可以先从官网下载所需要的版本的源代码到 ~/.pyenv/cache 目录下，再执行安装命令（亲测很好用）。</p> <p>注意这里要下载的是类似于 Python-3.7.3.tar.xz 这样的压缩文件，要到官网 <a href="https://www.python.org/downloads/source/" target="_blank" rel="noopener noreferrer">sourcecode<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> 页面 才可以下载。</p> <p>如果是下载 <code>python</code> 源码这一步慢，那么可以参考我的办法。
+<code>mkdir $PYENV_ROOT/cache</code> 然后用别的方法下载 <code>Python</code> 源码放到该目录下。
+这个路径是由 <code>PYTHON_BUILD_CACHE_PATH</code> 控制的，默认值是 <code>&quot;$PYENV_ROOT/cache&quot;</code>，但是文件夹并不是默认创建的。
+相关代码可以自己查看 https://github.com/pyenv/pyenv/blob/master/plugins/python-build/bin/pyenv-install#L183</p> <p>由于pyenv install xxx下载速度十分缓慢，甚至经常被墙。。找到一个解决方案并记录下来</p> <p>使用国内源</p> <p>#3.7.5是版本号， -P是下载到指定目录，如果没用cache目录必须先创建此目录
+wget http://mirrors.sohu.com/python/3.7.5/Python-3.7.5.tar.xz -P ~/.pyenv/cache/</p> <p>#如果有想下载其他，那么把版本号改掉即可，格式如下 <code>$v</code> 代表版本</p> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token function">wget</span> http://mirrors.sohu.com/python/<span class="token variable">$v</span>/Python-<span class="token variable">$v</span>.tar.xz <span class="token parameter variable">-P</span> ~/.pyenv/cache/
+<span class="token function">wget</span> https://npm.taobao.org/mirrors/python/<span class="token variable">$v</span>/Python-<span class="token variable">$v</span>.tar.xz <span class="token parameter variable">-P</span> ~/.pyenv/cache/
+</code></pre></div><p>下载完成以后运行命令即可</p> <p><strong>注意</strong>wget的方式未成功下载，好像是因为mirrors.sohu.com下面没有python的目录了</p> <p><a href="https://mirrors.sohu.com/" target="_blank" rel="noopener noreferrer">查看python的版本<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> <a href="http://mirrors.ustc.edu.cn/" target="_blank" rel="noopener noreferrer">镜像<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <div class="language- extra-class"><pre class="language-text"><code>https://pypi.tuna.tsinghua.edu.cn/simple/   # 清华
+http://pypi.doubanio.com/simple/  # 豆瓣
+http://mirrors.aliyun.com/pypi/simple/  # 阿里云
+http://pypi.hustunique.com/  # 华中理工大学
+http://pypi.sdutlinux.org/ # 山东理工大学
+https://pypi.mirrors.ustc.edu.cn/simple/ # 中国科学技术大学
+http://mirrors.163.com/pypi/simple/ # 网易
+
+清华大学开源镜像站 https://mirrors.tuna.tsinghua.edu.cn/
+网易开源镜像站 http://mirrors.163.com/
+阿里巴巴开源镜像站 https://opsx.alibaba.com/mirror/
+网易开源镜像站http://mirrors.163.com/
+搜狐镜像站（PHP，python）http://mirrors.sohu.com/
+淘宝镜像 https://npm.taobao.org/mirrors/
+腾讯软件源 mirrors.cloud.tencent.com/
+华为开源镜像站：mirrors.huaweicloud.com/
+9.中国科技大学：mirrors.ustc.edu.cn/
+10.北京交通大学：mirror.bjtu.edu.cn/cn/
+11.上海交通大学：ftp.sjtu.edu.cn/
+12.北京理工大学：mirror.bit.edu.cn/web/
+13.浙江大学：http://mirrors.zju.edu.cn
+14.北京理工大学：http://mirror.bit.edu.cn
+15.华中科技大学：mirrors.hust.edu.cn/
+16.豆瓣http://pypi.douban.com/simple/
+17.华中理工大学http://pypi.hustunique.com/simple/
+18.山东理工大学 http://pypi.sdutlinux.org/simple/
+</code></pre></div><p>上面选择一个源下载，最好先确认下路径下面有没有对应的版本文件</p> <div class="language-sh extra-class"><pre class="language-sh"><code>$ <span class="token function">wget</span> https://npm.taobao.org/mirrors/python/3.8.10/Python-3.8.10.tar.xz <span class="token parameter variable">-P</span> ~/.pyenv/cache/ 
+--2023-03-07 <span class="token number">17</span>:18:48--  https://npm.taobao.org/mirrors/python/3.8.10/Python-3.8.10.tar.xz
+Resolving npm.taobao.org <span class="token punctuation">(</span>npm.taobao.org<span class="token punctuation">)</span><span class="token punctuation">..</span>. <span class="token number">114.55</span>.80.225
+Connecting to npm.taobao.org <span class="token punctuation">(</span>npm.taobao.org<span class="token punctuation">)</span><span class="token operator">|</span><span class="token number">114.55</span>.80.225<span class="token operator">|</span>:443<span class="token punctuation">..</span>. connected.
+HTTP request sent, awaiting response<span class="token punctuation">..</span>. <span class="token number">302</span> Moved Temporarily
+Location: https://cdn.npmmirror.com/binaries/python/3.8.10/Python-3.8.10.tar.xz <span class="token punctuation">[</span>following<span class="token punctuation">]</span>
+--2023-03-07 <span class="token number">17</span>:18:48--  https://cdn.npmmirror.com/binaries/python/3.8.10/Python-3.8.10.tar.xz
+Resolving cdn.npmmirror.com <span class="token punctuation">(</span>cdn.npmmirror.com<span class="token punctuation">)</span><span class="token punctuation">..</span>. <span class="token number">182.140</span>.196.215, <span class="token number">182.140</span>.196.221, <span class="token number">182.140</span>.196.216, <span class="token punctuation">..</span>.
+Connecting to cdn.npmmirror.com <span class="token punctuation">(</span>cdn.npmmirror.com<span class="token punctuation">)</span><span class="token operator">|</span><span class="token number">182.140</span>.196.215<span class="token operator">|</span>:443<span class="token punctuation">..</span>. connected.
+HTTP request sent, awaiting response<span class="token punctuation">..</span>. <span class="token number">200</span> OK
+Length: <span class="token number">18433456</span> <span class="token punctuation">(</span>18M<span class="token punctuation">)</span> <span class="token punctuation">[</span>application/x-xz<span class="token punctuation">]</span>
+Saving to: ‘/Users/matias/.pyenv/cache/Python-3.8.10.tar.xz’
+
+Python-3.8.10.tar.xz           <span class="token number">100</span>%<span class="token punctuation">[</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">&gt;</span><span class="token punctuation">]</span>  <span class="token number">17</span>.58M  <span class="token number">12</span>.3MB/s    <span class="token keyword">in</span> <span class="token number">1</span>.4s    
+
+<span class="token number">2023</span>-03-07 <span class="token number">17</span>:18:50 <span class="token punctuation">(</span><span class="token number">12.3</span> MB/s<span class="token punctuation">)</span> - ‘/Users/matias/.pyenv/cache/Python-3.8.10.tar.xz’ saved <span class="token punctuation">[</span><span class="token number">18433456</span>/18433456<span class="token punctuation">]</span>
+</code></pre></div><h2 id="pyenv和流行的pipenv、virtualenv的关系"><a href="#pyenv和流行的pipenv、virtualenv的关系" class="header-anchor">#</a> pyenv和流行的pipenv、virtualenv的关系</h2> <ul><li><p>pipenv是requests 作者 Kenneth Reitz大神写的一个python虚拟环境管理工具, 结合了pip和virtualenv的功能, 侧重点还是在包环境管理上, 使用思路是先创建一个指定python版本的环境, 然后在此环境上安装相应的包, 好评不错, 看到很多大牛都在推荐.</p></li> <li><p>virtualenv是一个比较传统成熟的虚拟环境管理工具了, 用的人也比较多, 思路也是创建虚拟环境, 然后安装相应的包, 要进入环境就source一下activate脚本激活一下, 尽管成熟, 但是我个人不太喜欢用, 在部署项目的时候老是容易出现一些环境问题.</p></li> <li><p>pyenv相对来说知名度就差很多了, 不过也很稳定, 这三个环境管理工具我都用过, 我个人更喜欢pyenv, 理由如下:</p></li></ul> <ol><li>相对于其他两个工具, pyenv更侧重在python 解释器版本管理上, 比包管理更大一个层级, 使用pyenv我可以方便的下载指定版本的python解释器, pypy, anaconda等, 可以随时自由的在shell环境中本地、全局切换python解释器</li> <li>开发的时候不需要限定某个版本的虚拟环境, 只需要在部署的时候用pyenv指定某个版本就好了</li> <li>pyenv切换解释器版本的时候, pip和ipython以及对应的包环境都是一起切换的, 所以如果你要同时运行ipython2.x和ipython3.x多个解释器验证一些代码时就很方便</li> <li>pyenv也可以创建好指定的虚拟环境, 但不需要指定具体目录, 自由度更高, 使用也简单</li></ol> <h2 id="包管理插件pyenv-virtualenv"><a href="#包管理插件pyenv-virtualenv" class="header-anchor">#</a> 包管理插件pyenv-virtualenv</h2> <div class="language-sh extra-class"><pre class="language-sh"><code>$ arch <span class="token parameter variable">-arm64</span> brew <span class="token function">install</span> pyenv-virtualenv
+<span class="token punctuation">..</span>.
+To <span class="token builtin class-name">enable</span> auto-activation <span class="token function">add</span> to your profile:
+  <span class="token keyword">if</span> <span class="token function">which</span> pyenv-virtualenv-init <span class="token operator">&gt;</span> /dev/null<span class="token punctuation">;</span> <span class="token keyword">then</span> <span class="token builtin class-name">eval</span> <span class="token string">&quot;<span class="token variable"><span class="token variable">$(</span>pyenv virtualenv-init -<span class="token variable">)</span></span>&quot;</span><span class="token punctuation">;</span> <span class="token keyword">fi</span>
+</code></pre></div><p><strong>注意</strong>安装完成需要配置<code>eval &quot;$(pyenv virtualenv-init -)&quot;</code>到环境变量中去。</p> <p>首先下载:</p> <div class="language-sh extra-class"><pre class="language-sh"><code>$ <span class="token function">git</span> clone https://github.com/pyenv/pyenv-virtualenv.git $.pyenv/plugins/pyenv-virtualenv
+</code></pre></div><p>克隆完成后添加如下到shell配置文件(mac的话是.zshrc)</p> <div class="language- extra-class"><pre class="language-text"><code>$ echo 'eval &quot;$(pyenv virtualenv-init -)&quot;' &gt;&gt; ~/.bash_profile
+</code></pre></div><p>实际上mac用户直接brew安装就可以了...</p> <div class="language- extra-class"><pre class="language-text"><code>$ brew install pyenv-virtualenv
+$ eval &quot;$(pyenv init -)&quot;
+$ eval &quot;$(pyenv virtualenv-init -)&quot;
+</code></pre></div><p>使用:</p> <h1 id="创建一个3-6-5版本的虚拟环境-命名为v365env-然后激活虚拟环境"><a href="#创建一个3-6-5版本的虚拟环境-命名为v365env-然后激活虚拟环境" class="header-anchor">#</a> 创建一个3.6.5版本的虚拟环境, 命名为v365env, 然后激活虚拟环境</h1> <p>$ pyenv virtualenv 3.6.5 v365env
+$ pyenv activate v365env</p> <h1 id="关闭虚拟环境"><a href="#关闭虚拟环境" class="header-anchor">#</a> 关闭虚拟环境</h1> <p>$ pyenv deactivate v365env
+当切换python解释器的时候对应的pip和包库也会一并切换过去, 而且可以为指定版本的解释器创建项目所需的虚拟环境, 切换的时候也异常简单, 个人常用的做法是为每个项目创建不同的虚拟环境, 当进入该环境的时候就可以随便浪而不用担心影响到其它项目, 搭配Pycharm使用效果更佳.</p></div> <footer><!----> <hr> <!----></footer></article> <div class="sticker vuepress-toc"><div class="vuepress-toc-item vuepress-toc-h2 active"><a href="#安装" title="安装">安装</a></div><div class="vuepress-toc-item vuepress-toc-h2"><a href="#配置环境" title="配置环境">配置环境</a></div><div class="vuepress-toc-item vuepress-toc-h2"><a href="#使用" title="使用">使用</a></div><div class="vuepress-toc-item vuepress-toc-h3"><a href="#global、shell、local之间的区别" title="global、shell、local之间的区别：">global、shell、local之间的区别：</a></div><div class="vuepress-toc-item vuepress-toc-h2"><a href="#错误" title="错误">错误</a></div><div class="vuepress-toc-item vuepress-toc-h3"><a href="#安装新的python版本pyenv-install-3-10-5或pyenv-install-v-3-10-5报错" title="安装新的Python版本pyenv install 3.10.5或pyenv install -v 3.10.5报错">安装新的Python版本pyenv install 3.10.5或pyenv install -v 3.10.5报错</a></div><div class="vuepress-toc-item vuepress-toc-h2"><a href="#使用-2" title="使用">使用</a></div><div class="vuepress-toc-item vuepress-toc-h2"><a href="#pyenv安装python慢" title="pyenv安装python慢">pyenv安装python慢</a></div><div class="vuepress-toc-item vuepress-toc-h2"><a href="#pyenv和流行的pipenv、virtualenv的关系" title="pyenv和流行的pipenv、virtualenv的关系">pyenv和流行的pipenv、virtualenv的关系</a></div><div class="vuepress-toc-item vuepress-toc-h2"><a href="#包管理插件pyenv-virtualenv" title="包管理插件pyenv-virtualenv">包管理插件pyenv-virtualenv</a></div></div></div></div> <footer class="footer" data-v-3d9deeb8><div class="footer-left-wrap" data-v-3d9deeb8><ul class="contact" data-v-3d9deeb8></ul></div> <div class="footer-right-wrap" data-v-3d9deeb8><ul class="copyright" data-v-3d9deeb8></ul></div></footer></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.73a0734d.js" defer></script><script src="/assets/js/6.383bd1fb.js" defer></script><script src="/assets/js/3.c5fb39ae.js" defer></script><script src="/assets/js/37.044de3dc.js" defer></script>
+  </body>
+</html>

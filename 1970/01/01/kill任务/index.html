@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Matias Tang</title>
+    <meta name="generator" content="VuePress 1.9.9">
+    
+    <meta name="description" content="
+
+远程kill 服务进程
+
+handiiy
+
+于 2021-11-25 16:43:48 ...">
+    
+    <link rel="preload" href="/assets/css/0.styles.82ff4c1c.css" as="style"><link rel="preload" href="/assets/js/app.73a0734d.js" as="script"><link rel="preload" href="/assets/js/6.383bd1fb.js" as="script"><link rel="preload" href="/assets/js/3.c5fb39ae.js" as="script"><link rel="preload" href="/assets/js/29.4e33fd32.js" as="script"><link rel="prefetch" href="/assets/js/10.c8461d83.js"><link rel="prefetch" href="/assets/js/11.7103ea48.js"><link rel="prefetch" href="/assets/js/12.0ffc461f.js"><link rel="prefetch" href="/assets/js/13.66b359e8.js"><link rel="prefetch" href="/assets/js/14.62c2e1cf.js"><link rel="prefetch" href="/assets/js/15.ae71adf7.js"><link rel="prefetch" href="/assets/js/16.04a2da67.js"><link rel="prefetch" href="/assets/js/17.7ddaa3ab.js"><link rel="prefetch" href="/assets/js/18.9a12f63b.js"><link rel="prefetch" href="/assets/js/19.251198e9.js"><link rel="prefetch" href="/assets/js/20.39607cf0.js"><link rel="prefetch" href="/assets/js/21.5bed106c.js"><link rel="prefetch" href="/assets/js/22.af529764.js"><link rel="prefetch" href="/assets/js/23.f29beaa7.js"><link rel="prefetch" href="/assets/js/24.974ebe20.js"><link rel="prefetch" href="/assets/js/25.9baf83bb.js"><link rel="prefetch" href="/assets/js/26.4e1e56cb.js"><link rel="prefetch" href="/assets/js/27.a2e42497.js"><link rel="prefetch" href="/assets/js/28.253fdba3.js"><link rel="prefetch" href="/assets/js/30.c8564cdf.js"><link rel="prefetch" href="/assets/js/31.bd1c7d80.js"><link rel="prefetch" href="/assets/js/32.e2088de6.js"><link rel="prefetch" href="/assets/js/33.55dcece3.js"><link rel="prefetch" href="/assets/js/34.975e9485.js"><link rel="prefetch" href="/assets/js/35.cd5140c6.js"><link rel="prefetch" href="/assets/js/36.afe80a70.js"><link rel="prefetch" href="/assets/js/37.044de3dc.js"><link rel="prefetch" href="/assets/js/38.6738bf81.js"><link rel="prefetch" href="/assets/js/39.7af5e2e7.js"><link rel="prefetch" href="/assets/js/4.465c8454.js"><link rel="prefetch" href="/assets/js/40.4c268aec.js"><link rel="prefetch" href="/assets/js/41.16947aeb.js"><link rel="prefetch" href="/assets/js/42.086e13c7.js"><link rel="prefetch" href="/assets/js/43.37da2973.js"><link rel="prefetch" href="/assets/js/44.51618db1.js"><link rel="prefetch" href="/assets/js/45.431a59b8.js"><link rel="prefetch" href="/assets/js/46.1c09406f.js"><link rel="prefetch" href="/assets/js/47.49f21001.js"><link rel="prefetch" href="/assets/js/48.291c9e65.js"><link rel="prefetch" href="/assets/js/49.9d4360a0.js"><link rel="prefetch" href="/assets/js/5.8cda2127.js"><link rel="prefetch" href="/assets/js/50.811d17b1.js"><link rel="prefetch" href="/assets/js/51.0ad84238.js"><link rel="prefetch" href="/assets/js/52.193b2983.js"><link rel="prefetch" href="/assets/js/53.88b4fcd2.js"><link rel="prefetch" href="/assets/js/54.c1138869.js"><link rel="prefetch" href="/assets/js/55.2e600288.js"><link rel="prefetch" href="/assets/js/56.391a0aa7.js"><link rel="prefetch" href="/assets/js/57.8cd38724.js"><link rel="prefetch" href="/assets/js/58.2725d985.js"><link rel="prefetch" href="/assets/js/59.62cdc609.js"><link rel="prefetch" href="/assets/js/60.561b356b.js"><link rel="prefetch" href="/assets/js/61.3a83b170.js"><link rel="prefetch" href="/assets/js/62.587d01ed.js"><link rel="prefetch" href="/assets/js/63.65991321.js"><link rel="prefetch" href="/assets/js/64.4ec8165a.js"><link rel="prefetch" href="/assets/js/65.41b05749.js"><link rel="prefetch" href="/assets/js/66.8327f787.js"><link rel="prefetch" href="/assets/js/67.73bbf5bb.js"><link rel="prefetch" href="/assets/js/68.602d3bad.js"><link rel="prefetch" href="/assets/js/69.dbb9187f.js"><link rel="prefetch" href="/assets/js/7.05753621.js"><link rel="prefetch" href="/assets/js/70.48f6e1ba.js"><link rel="prefetch" href="/assets/js/71.97ac2204.js"><link rel="prefetch" href="/assets/js/72.3ae72523.js"><link rel="prefetch" href="/assets/js/8.5ddd4425.js"><link rel="prefetch" href="/assets/js/9.521c2bf3.js"><link rel="prefetch" href="/assets/js/vuejs-paginate.bd98283b.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.82ff4c1c.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div id="vuepress-theme-blog__global-layout"><section id="header-wrapper"><header id="header"><div class="header-wrapper"><div class="title"><a href="/" class="nav-link home-link">Matias Tang </a></div> <div class="header-right-wrap"><!----> <div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></div></header></section> <div id="mobile-header"><div class="mobile-header-bar"><div class="mobile-header-title"><a href="/" class="nav-link mobile-home-link">Matias Tang </a> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></div> <div class="mobile-menu-wrapper"><hr class="menu-divider"> <!----></div></div></div> <div class="content-wrapper"><div id="vuepress-theme-blog__post-layout"><article itemscope="itemscope" itemtype="https://schema.org/BlogPosting" class="vuepress-blog-theme-content"><header><h1 itemprop="name headline" class="post-title">
+        
+      </h1> <div class="post-meta"><!----> <!----> <!----></div></header> <div itemprop="articleBody" class="content__default"><p>远程kill 服务进程</p> <p>handiiy</p> <p>于 2021-11-25 16:43:48 发布</p> <p>541
+收藏
+文章标签： linux ssh bash
+版权
+本地根据服务名称kill
+ps -ef | grep ycloans | grep -v grep | awk '{print $2}' | xargs kill</p> <p>根据端口号kill
+kill -9 $(lsof -i:9051|awk '{print $2}')</p> <p>远程根据服务名称kill，需拆解
+#远程服务进程
+ssh username@host &quot;ps -ef | grep ycloans | grep -v grep | awk  '{print $2}'&quot;
+#远程查询PID 并只显示进程号
+pid=$(ssh username@host &quot;ps -ef | grep ycloans | grep -v grep | awk  '{print $2}'&quot;| awk '{print $2}')
+echo $pid
+#只能kill 掉一个进程
+ssh username@host &quot;kill -9 ${pid}&quot;</p> <p>解析
+ps -ef 指令用来查询所有进程</p> <p>grep通过管道来过滤</p> <p>grep -v 是反向查询的意思，grep -v grep的作用是除去包含grep的项。</p> <p>awk '{print $2}'    以空格作为分隔符，打印第二个字段</p> <h2 id="错误"><a href="#错误" class="header-anchor">#</a> 错误</h2> <h3 id="远程kill进程报错-kill-failed-to-parse-argument-root"><a href="#远程kill进程报错-kill-failed-to-parse-argument-root" class="header-anchor">#</a> 远程kill进程报错：kill: failed to parse argument: 'root'</h3> <div class="language-sh extra-class"><pre class="language-sh"><code>$ <span class="token function">ps</span> <span class="token parameter variable">-ef</span> <span class="token operator">|</span> <span class="token function">grep</span> wl_apscheduler.py <span class="token operator">|</span> <span class="token function">grep</span> <span class="token parameter variable">-v</span> <span class="token function">grep</span> <span class="token operator">|</span> <span class="token function">awk</span> <span class="token string">'{print $2}'</span> <span class="token operator">|</span> <span class="token function">xargs</span> <span class="token function">kill</span> <span class="token parameter variable">-9</span>
+</code></pre></div><p>由于<code>$2</code>是个变量，无法读取到远端主机的变量，因此执行杀掉进程命令时，找不到，导致报错
+修改为<code>\$2</code></p> <div class="language-sh extra-class"><pre class="language-sh"><code>$ <span class="token function">ps</span> <span class="token parameter variable">-ef</span> <span class="token operator">|</span> <span class="token function">grep</span> wl_apscheduler.py <span class="token operator">|</span> <span class="token function">grep</span> <span class="token parameter variable">-v</span> <span class="token function">grep</span> <span class="token operator">|</span> <span class="token function">awk</span> <span class="token string">'{print \$2}'</span> <span class="token operator">|</span> <span class="token function">xargs</span> <span class="token function">kill</span> <span class="token parameter variable">-9</span>
+</code></pre></div><h3 id="屏蔽bash-line-23-73654-killed输出"><a href="#屏蔽bash-line-23-73654-killed输出" class="header-anchor">#</a> 屏蔽bash <code>line 23: 73654 Killed</code>输出</h3> <div class="language-sh extra-class"><pre class="language-sh"><code>$ <span class="token function">ps</span> <span class="token parameter variable">-ef</span> <span class="token operator">|</span> <span class="token function">grep</span> wl_apscheduler.py <span class="token operator">|</span> <span class="token function">grep</span> <span class="token parameter variable">-v</span> <span class="token function">grep</span> <span class="token operator">|</span> <span class="token function">awk</span> <span class="token string">'{print $2}'</span> <span class="token operator">|</span> <span class="token function">xargs</span> <span class="token function">kill</span> <span class="token parameter variable">-9</span>
+-bash: line <span class="token number">23</span>: <span class="token number">73654</span> Killed                  <span class="token function">nohup</span> python3 ./wl_apscheduler.py <span class="token operator">&gt;</span> output.log <span class="token operator"><span class="token file-descriptor important">2</span>&gt;</span><span class="token file-descriptor important">&amp;1</span>
+
+<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>+  Exit <span class="token number">137</span>                <span class="token builtin class-name">cd</span> /var/mt-project/mt-scrapy/welfare-lottery-scrapy/ <span class="token operator">&amp;&amp;</span> <span class="token function">nohup</span> python3 ./wl_apscheduler.py <span class="token operator">&gt;</span> output.log <span class="token operator"><span class="token file-descriptor important">2</span>&gt;</span><span class="token file-descriptor important">&amp;1</span>
+</code></pre></div><p>bash – 如何屏蔽kill输出如： <code>sleep 20 &amp; PID=$! kill -9 $PID &gt;/dev/null 2&gt;&amp;1</code> 我不希望脚本显示输出如下： <code>line 23: 73654 Killed</code>
+我运行如下脚本：</p> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token function">sleep</span> <span class="token number">20</span> <span class="token operator">&amp;</span>
+<span class="token assign-left variable">PID</span><span class="token operator">=</span><span class="token variable">$!</span>
+<span class="token function">kill</span> <span class="token parameter variable">-9</span> <span class="token variable">$PID</span> <span class="token operator">&gt;</span>/dev/null <span class="token operator"><span class="token file-descriptor important">2</span>&gt;</span><span class="token file-descriptor important">&amp;1</span>
+</code></pre></div><p>我不希望脚本显示如下输出：</p> <div class="language-sh extra-class"><pre class="language-sh"><code>line <span class="token number">51</span>: <span class="token number">22943</span> Killed  <span class="token function">sleep</span>
+</code></pre></div><p>我不知道为什么会这样，我将输出重定向到<code>/dev/null</code></p> <p>对我有用的唯一方法是在这里<code>stackoverflow.com/a/14152313/6706875，kill -13 pid</code>，它不会生成任何默认的kill输出
+该消息不是来自kill或后台命令，而是来自bash，它发现其后台作业之一已被杀死。为了避免出现此消息，请使用disown将其从bash的作业控件中删除：</p> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token function">sleep</span> <span class="token number">20</span> <span class="token operator">&amp;</span>
+<span class="token assign-left variable">PID</span><span class="token operator">=</span><span class="token variable">$!</span>
+disown <span class="token variable">$PID</span>
+<span class="token function">kill</span> <span class="token parameter variable">-9</span> <span class="token variable">$PID</span>
+</code></pre></div><h1 id="kill-任务"><a href="#kill-任务" class="header-anchor">#</a> kill 任务</h1> <div class="language-sh extra-class"><pre class="language-sh"><code>$ <span class="token function">ps</span> <span class="token parameter variable">-ef</span> <span class="token operator">|</span> <span class="token function">grep</span> wl_apscheduler.py <span class="token operator">|</span> <span class="token function">grep</span> <span class="token parameter variable">-v</span> <span class="token function">grep</span> <span class="token operator">|</span> <span class="token function">awk</span> <span class="token string">'{print $2}'</span> <span class="token operator">|</span> <span class="token function">xargs</span> <span class="token function">kill</span> <span class="token parameter variable">-9</span>
+</code></pre></div><p>现在知道进程名怎样杀死这个进程。或许很多人都会和我一样说用</p> <p>pkill 进程名&quot;,&quot;content&quot;
+或是</p> <p>killall 进程名&quot;,&quot;content&quot;
+的确这个两个命令都能做到这些，而且我们平时一般知道进程名需要杀死进程的时候也都是用的这两个命令。可是他叫我用kill 命令来完成这个一操作。我们知道kill 要杀死进程是需要知道进程的id的即进程号，其实这个思路就是需要通过其他命令获取相应进程的进程号，然后用kill 杀掉。</p> <p>这里提供两个方法：</p> <p>这个是利用管道和替换将 进程名对应的进程号提出来作为kill的参数。</p> <p>sudo kill - $(ps -ef|grep 进程名关键字|gawk '$0 !~/grep/ {print $2}' |tr -s '' ' ')</p> <div class="language-sh extra-class"><pre class="language-sh"><code>$ <span class="token function">sudo</span> <span class="token function">kill</span> - <span class="token variable"><span class="token variable">$(</span><span class="token function">ps</span> -ef<span class="token operator">|</span><span class="token function">grep</span> 进程名关键字<span class="token operator">|</span><span class="token function">gawk</span> <span class="token string">'$0 !~/grep/ {print $2}'</span> <span class="token operator">|</span><span class="token function">tr</span> <span class="token parameter variable">-s</span> <span class="token string">''</span> <span class="token string">' '</span><span class="token variable">)</span></span>
+$ <span class="token function">ps</span> -ef<span class="token operator">|</span><span class="token function">grep</span> ./wl_apscheduler.py<span class="token operator">|</span><span class="token function">gawk</span> <span class="token string">'$0 !~/grep/ {print $2}'</span>
+</code></pre></div><p>很显然上面的方法能完成但是过于复杂，下面这种就显得简单的多了</p> <p>sudo kill - $(pidof 进程名关键字)</p> <p>原文：http://www.aliunx.com/archives/25.html</p> <p>经常需要Kill多个进程，这些进程包含共同的关键字，可以用一条命令Kill掉它们。</p> <p>ps aux | grep &quot;common&quot; | cut -c 9-15| xargs kill -9</p> <p>管道符“|”用来隔开两个命令，管道符左边命令的输出会作为管道符右边命令的输入。下面说说用管道符联接起来的几个命令：</p> <p>&quot;ps aux&quot; 查看所有进程的命令。这时检索出的进程将作为下一条命令grep&quot;common&quot;的输入。</p> <p>&quot;grep &quot;common&quot; 选出所有含有关键字&quot;common&quot;的进程。</p> <p>&quot;cut -c 9-15&quot; 截取输入行的第9个字符到第15个字符，而这正好是进程号PID。</p> <h2 id="xargs-kill-9-中的xargs命令是用来把前面命令的输出结果-pid-作为-kill-9-命令的参数-并执行该命令。-kill-9-会强行杀掉指定进程。"><a href="#xargs-kill-9-中的xargs命令是用来把前面命令的输出结果-pid-作为-kill-9-命令的参数-并执行该命令。-kill-9-会强行杀掉指定进程。" class="header-anchor">#</a> &quot;xargs kill –9&quot; 中的xargs命令是用来把前面命令的输出结果（PID）作为&quot;kill–9&quot;命令的参数，并执行该命令。&quot;kill–9&quot; 会强行杀掉指定进程。</h2> <p>linux 根据进程名称kill进程
+https://blog.51cto.com/u_5650011/5385124</p> <p>作为 Linux 系统管理员，很多时候会遇到Linux进程无响应或消耗太多资源，则可能需要终止它。大多数进程都有自己的关闭方法。不幸的是，进程可能会出现故障，不允许自己关闭。如果正在运行的后台进程无响应，则需要使用命令将其终止。</p> <p>在 Linux 中可以杀死哪些进程？</p> <p>在终止或杀掉进程之前，首先得考虑权限。root 用户可以终止所有进程。或者在不是root用户登录的情况下通过在命令之前添加 sudo 以将其作为 root 运行，也可以使用 su 获取根 shell，然后执行该命令。</p> <p>终止进程会向给定进程发送终止消息。有多种类型的终止消息，包括：</p> <p>SIGKILL – SIGKILL 是杀死过程的终极方式。它总是会杀死一个进程，并且会突然杀死该进程，从而产生致命错误。SIGKILL应该总是有效的。如果它不起作用，则操作系统已出现故障。</p> <p>SIGTERM – SIGTERM 试图终止进程，但与 SIGKILL 不同的是，它可能会被阻止或以其他方式处理。可以将其视为尝试终止进程的更优雅的方式。</p> <p>对于大多数目的，SIGKILL将是终止该过程的最快，最有效的方法。</p> <p>1，查看运行的进程</p> <p>top 命令是全面了解当前正在运行的进程的最简单方法。要查看当前正在运行的所有进程的列表，请使用以下命令：</p> <p>[root@sharplee ~]# top</p> <p>上面可以查看当前运行靠前的进程，如果想杀掉某个进程，直接在当前查看下按住K键，输入进程号，回车即可即可杀掉进程。接着退出按q键。</p> <p>2，定位要终止进程</p> <p>在杀死进程之前，可以通过很多种方法来定位进程。有多种方法可以在 Linux 中搜索进程。进程可以通过进程名称（或部分进程名称）或进程 ID（也称为“pid”）进行定位。</p> <p>（1），通过ps命令来定位进程。</p> <p>ps 命令显示与 top 类似的信息，但它不会以接口的形式显示。相反，ps 命令提供了正在运行的进程的完整列表，并根据选项来进行格式化。</p> <p>[root@sharplee ~]# ps -aux</p> <p>（2），发现进程id通过pgrep或者pidof命令</p> <p>Linux命令 pgrep 是查找进程的一种更复杂的方法。此命令将返回基于特定选择条件（称为模式）的进程。该模式是一个正则表达式，例如 a*，其中 * 将是通配符。例如查找docker进程。</p> <p>[root@sharplee ~]# pgrep docker</p> <p>以下是pgrep命令的一些使用选项：</p> <p>-l.列出进程名称和 PID。
+-n.返回最新的进程。
+-o.返回最旧的进程。
+-u.仅查找属于特定用户的进程。
+-x.仅查找与给定模式完全匹配的进程。
+命令 pgrep -u root 显示 root 拥有的所有进程。命令 pgrep -u 根 'a*' 返回 root 拥有的以字母 “a” 开头的进程。</p> <p>pidof 命令用于查找进程的 ID，前提是您知道进程的名称。</p> <p>[root@sharplee ~]# pidof docker</p> <p>pidof可以使用以下选项：</p> <p>-c.仅返回单个根目录中的 PID。
+-o.省略某些 PID（包括在标志后要省略的进程）。
+-s.仅返回单个PID。
+-x.还返回正在运行脚本的shell的PID。</p> <p>3，通过kill命令终止进程</p> <p>在 Linux 中，有几种不同的终止进程的方法，具体取决于您是否知道正在运行的进程的名称、进程的 pid，或者知道进程运行了多长时间。</p> <p>killall命令：killall 命令用于按名称终止进程。默认情况下，它将发送 SIGTERM 信号。killall 命令可以使用单个命令终止多个进程。如果提示not found，执行yum install psmisc。</p> <p>[root@sharplee ~]#killall nginx</p> <p>killall有以下选项可以使用：</p> <p>-e.查找进程名称的完全匹配项。
+-I. 尝试查找进程名称时忽略大小写。
+-一.在终止进程时要求其他确认。
+-u.仅终止特定用户拥有的进程。
+-v.报告进程是否已成功终止。</p> <p>除了基于名称终止进程外，killall命令还可以使用基于进程的期限进行终止，使用以下命令：</p> <p>-o.使用此具有持续时间的标志可以终止运行时间超过该时间量的所有进程。
+-y.使用此具有持续时间的标志可以终止运行时间少于该时间量的所有进程。</p> <p>killall -o 15m 命令将终止所有早于 15 分钟的进程，而 killall -y 15m 命令将终止所有小于 15 分钟的进程.</p> <p>pkill命令：pkill 命令类似于 pgrep 命令，因为它除了其他限定因素外，还会根据进程名称终止进程。默认情况下，pkill 将发送 SIGTERM 信号。
+[root@sharplee ~]# pkill nginx</p> <p>pkill命令的选项包括：</p> <p>-n.仅终止发现的最新进程。
+-o.仅杀死发现的最古老的进程。
+-u.仅终止所选用户拥有的进程。
+-x.仅终止与模式完全匹配的进程。
+-signal.向进程发送特定信号，而不是 SIGTERM。</p> <p>kill 命令:kill 命令将使用给定的进程ID一次终止一个进程。它将向进程发送一个SIGTERM信号，指示要停止。它等待程序运行其关机例程。-signal 命令可用于指定不是 SIGTERM 的信号.</p> <p>[root@sharplee ~]# kill 6677</p> <p>kill -9 名令：kill -9 是一个有用的命令，当你需要关闭一个无响应的服务。以类似于常规 kill 命令的方式运行它。
+[root@sharplee ~]# kill -9 6864</p> <p>kill -9 命令向服务发送 SIGKILL 信号，指示立即关闭。无响应的程序将忽略kill命令，但每当发出 kill -9命令时，它将关闭。请谨慎使用此命令。它绕过标准关机例程，因此任何未保存的数据都将丢失。</p> <p>如果 SIGKILL 信号未关闭服务，则操作系统将无法正常运行。</p> <p>总结：当无法以任何其他方式关闭进程时，可以通过命令行手动终止该进程。要在 Linux 中终止进程，必须首先找到该进程。可以使用 top、ps、pidof 或 pgrep 命令来查找。一旦找到了想要终止的进程，可以用killall，pkill，kill，top命令杀死它。杀死进程时，可以发送 SIGHUP、SIGKILL 或 SIGTERM 的终止信号。需要具有终止进程的权限，这可以通过使用 sudo 命令获得。</p> <p>笔记：根据一个进程的名字或启动此进程的命令（连续的一部分即可）杀死进程</p> <p>一、使用单条命令</p> <p>ps -ef | grep 进程名/启动进程的命令 | grep -v grep | awk ‘{print $2}’ | xargs kill -9</p> <p>测试：</p> <p>终端输入：</p> <p>sleep 200 &amp;</p> <p>sleep 200 &amp;</p> <p>ps -ef | grep sleep | grep -v grep | awk ‘{print $2}’ | xargs kill -9</p> <p>执行结果：</p> <p>[1]-  已杀死               sleep 200</p> <p>[2]+  已杀死               sleep 200</p> <p>二、编写脚本</p> <p>linux脚本名：kill_process.sh</p> <p>#!/bin/bash</p> <h1 id="脚本名-kill-process-sh"><a href="#脚本名-kill-process-sh" class="header-anchor">#</a> 脚本名：kill_process.sh</h1> <h1 id="脚本功能-强制杀死进程-方式kill-9"><a href="#脚本功能-强制杀死进程-方式kill-9" class="header-anchor">#</a> 脚本功能：强制杀死进程 方式kill -9</h1> <div class="language- extra-class"><pre><code> # 1通过ps查询进程的id
+ # 2使用kill -9 强制终止进程
+</code></pre></div><h1 id="启动方式-bin-bash-kill-process-sh-进程名"><a href="#启动方式-bin-bash-kill-process-sh-进程名" class="header-anchor">#</a> 启动方式：/bin/bash kill_process.sh 进程名</h1> <h1 id="如果参数个数不等于1-提示错误并退出程序"><a href="#如果参数个数不等于1-提示错误并退出程序" class="header-anchor">#</a> 如果参数个数不等于1  提示错误并退出程序</h1> <p>if [ $# -ne 1 ]
+then
+echo “参数个数有误 请使用此方式运行：/bin/bash kill_process.sh 进程名”
+exit 1
+fi</p> <h1 id="获取要被杀死的进程名"><a href="#获取要被杀死的进程名" class="header-anchor">#</a> 获取要被杀死的进程名</h1> <p>pName=$1</p> <p>&lt;&lt;!
+函数功能：根据进程名杀死程序
+参数：进程名
+返回值：无
+!
+kill_processes(){</p> <div class="language- extra-class"><pre><code> # 获取进程id
+ pids=$(ps -ef | grep “$1” | grep -v grep | grep -v $0 | awk ‘{print $2}’)
+ for pid in $pids
+ do
+     kill -9 $pId
+ done
+</code></pre></div><p>}</p> <p>echo 将要被终止的进程有：
+echo ——————————————————————</p> <h1 id="根据进程名查询包含进程名的进程-并排除grep查询进程和此脚本进程"><a href="#根据进程名查询包含进程名的进程-并排除grep查询进程和此脚本进程" class="header-anchor">#</a> 根据进程名查询包含进程名的进程 并排除grep查询进程和此脚本进程</h1> <p>ps -ef | grep “$pName” | grep -v grep | grep -v $0
+echo ——————————————————————</p> <h1 id="确认是否杀死程序"><a href="#确认是否杀死程序" class="header-anchor">#</a> 确认是否杀死程序</h1> <p>read -t 10 -p “10秒后将自动杀死这些进程，请确认是否杀死这些进程（y/n）：” ipt</p> <p>case $ipt in
+“n”)
+echo “==我还不想干掉它们”
+exit 0;;
+“y”)
+echo “是的，立即干掉它们”
+kill_processes $pName;;
+“”)
+# 没有输入确认信息  默认杀死程序
+echo “”
+echo “开始自动杀死这些程序”
+kill_processes $pName;;
+*)
+echo “您的输入有误，将终止脚本”
+exit 1;;</p> <p>esac</p> <p>测试：</p> <h1 id="终端后台启动两次延时命令"><a href="#终端后台启动两次延时命令" class="header-anchor">#</a> 终端后台启动两次延时命令</h1> <p>sleep 200 &amp;</p> <p>sleep 200 &amp;</p> <h1 id="启动脚本"><a href="#启动脚本" class="header-anchor">#</a> 启动脚本</h1> <p>/bin/bash kill_process.sh sleep  或  /bin/bash kill_process.sh “sleep 200”</p> <p>执行结果：</p> <p>将要被终止的进程有：
+——————————————————————
+python    13583  13550  0 19:42 pts/6    00:00:00 sleep 200
+python    13584  13550  0 19:42 pts/6    00:00:00 sleep 200
+——————————————————————
+10秒后将自动杀死这些进程，请确认是否杀死这些进程（y/n）：y
+是的，立即干掉它们
+[1]-  已杀死               sleep 200
+[2]+  已杀死               sleep 200</p> <p>如果每次使用命令：”/bin/bash 脚本路径  程序”来启动脚本会很麻烦</p> <p>我们可以将这个命令加入到我们的环境变量里面去 这样使用起来就会方便很多</p> <p>比如我们将它加入到当前用户（也可以修改全局的对所有用户生效）的环境变量中：</p> <h1 id="修改当前环境变量的文件"><a href="#修改当前环境变量的文件" class="header-anchor">#</a> 修改当前环境变量的文件</h1> <p>vi ~/.bash_profile</p> <h1 id="最后一行添加"><a href="#最后一行添加" class="header-anchor">#</a> 最后一行添加</h1> <p>my_kill=”/bin/bash 脚本路径”</p> <p>保存后执行source ~/.bash_profile使立即生效</p> <p>之后只要我们在当前用户下就可以使用命令：”$my_kill 程序”来执行了</p> <p>版权声明：本文内容由互联网用户自发贡献，该文观点仅代表作者本人。本站仅提供信息存储空间服务，不拥有所有权，不承担相关法律责任。如发现本站有涉嫌侵权/违法违规的内容， 请发送邮件至 举报，一经查实，本站将立刻删除。</p></div> <footer><!----> <hr> <!----></footer></article> <div class="sticker vuepress-toc"><div class="vuepress-toc-item vuepress-toc-h2 active"><a href="#错误" title="错误">错误</a></div><div class="vuepress-toc-item vuepress-toc-h3"><a href="#远程kill进程报错-kill-failed-to-parse-argument-root" title="远程kill进程报错：kill: failed to parse argument: 'root'">远程kill进程报错：kill: failed to parse argument: 'root'</a></div><div class="vuepress-toc-item vuepress-toc-h3"><a href="#屏蔽bash-line-23-73654-killed输出" title="屏蔽bash line 23: 73654 Killed输出">屏蔽bash line 23: 73654 Killed输出</a></div><div class="vuepress-toc-item vuepress-toc-h2"><a href="#xargs-kill-9-中的xargs命令是用来把前面命令的输出结果-pid-作为-kill-9-命令的参数-并执行该命令。-kill-9-会强行杀掉指定进程。" title="&quot;xargs kill –9&quot; 中的xargs命令是用来把前面命令的输出结果（PID）作为&quot;kill–9&quot;命令的参数，并执行该命令。&quot;kill–9&quot; 会强行杀掉指定进程。">&quot;xargs kill –9&quot; 中的xargs命令是用来把前面命令的输出结果（PID）作为&quot;kill–9&quot;命令的参数，并执行该命令。&quot;kill–9&quot; 会强行杀掉指定进程。</a></div></div></div></div> <footer class="footer" data-v-3d9deeb8><div class="footer-left-wrap" data-v-3d9deeb8><ul class="contact" data-v-3d9deeb8></ul></div> <div class="footer-right-wrap" data-v-3d9deeb8><ul class="copyright" data-v-3d9deeb8></ul></div></footer></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.73a0734d.js" defer></script><script src="/assets/js/6.383bd1fb.js" defer></script><script src="/assets/js/3.c5fb39ae.js" defer></script><script src="/assets/js/29.4e33fd32.js" defer></script>
+  </body>
+</html>
