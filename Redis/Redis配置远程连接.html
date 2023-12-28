@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Matias Tang</title>
+    <meta name="generator" content="VuePress 1.9.10">
+    
+    <meta name="description" content="&lt;!--
+ @Author: matiastang
+ @Date: 2023-09-18 19:28:50
+ @LastEditors: matiastang
+ @LastEditTime: 2023-11-09 17:14:14
+ @FilePath: /HulkPress/docs/Redis/Redis配置远程连接.md
+ @Description: Redis配置远 ...">
+    
+    <link rel="preload" href="/assets/css/0.styles.d98ac11d.css" as="style"><link rel="preload" href="/assets/js/app.29e3e174.js" as="script"><link rel="preload" href="/assets/js/4.7296a041.js" as="script"><link rel="preload" href="/assets/js/8.58afedc8.js" as="script"><link rel="preload" href="/assets/js/60.a110b6c9.js" as="script"><link rel="prefetch" href="/assets/js/1.1ee916e6.js"><link rel="prefetch" href="/assets/js/100.7148729e.js"><link rel="prefetch" href="/assets/js/101.5494263d.js"><link rel="prefetch" href="/assets/js/102.8cb3c964.js"><link rel="prefetch" href="/assets/js/103.90eee404.js"><link rel="prefetch" href="/assets/js/104.b2031d3c.js"><link rel="prefetch" href="/assets/js/105.c1d2d862.js"><link rel="prefetch" href="/assets/js/106.611a3845.js"><link rel="prefetch" href="/assets/js/107.d38b88db.js"><link rel="prefetch" href="/assets/js/108.75a84968.js"><link rel="prefetch" href="/assets/js/109.7a02eb7e.js"><link rel="prefetch" href="/assets/js/11.905d9209.js"><link rel="prefetch" href="/assets/js/110.0b80828f.js"><link rel="prefetch" href="/assets/js/111.ba8921c3.js"><link rel="prefetch" href="/assets/js/112.c1a8b92f.js"><link rel="prefetch" href="/assets/js/113.86479cd5.js"><link rel="prefetch" href="/assets/js/114.92b2ac9d.js"><link rel="prefetch" href="/assets/js/115.970f137f.js"><link rel="prefetch" href="/assets/js/116.c70bf4a6.js"><link rel="prefetch" href="/assets/js/117.2cd3d61f.js"><link rel="prefetch" href="/assets/js/118.8388070b.js"><link rel="prefetch" href="/assets/js/119.29d78674.js"><link rel="prefetch" href="/assets/js/12.0d530c63.js"><link rel="prefetch" href="/assets/js/120.ace7b6ac.js"><link rel="prefetch" href="/assets/js/121.569fe3f3.js"><link rel="prefetch" href="/assets/js/122.4712657d.js"><link rel="prefetch" href="/assets/js/123.9f478f5f.js"><link rel="prefetch" href="/assets/js/124.fe3a61da.js"><link rel="prefetch" href="/assets/js/125.09c50f4d.js"><link rel="prefetch" href="/assets/js/126.666b658b.js"><link rel="prefetch" href="/assets/js/127.05eecf86.js"><link rel="prefetch" href="/assets/js/128.5094ca35.js"><link rel="prefetch" href="/assets/js/129.0ac0387d.js"><link rel="prefetch" href="/assets/js/13.632a566f.js"><link rel="prefetch" href="/assets/js/130.0427221a.js"><link rel="prefetch" href="/assets/js/131.0902b291.js"><link rel="prefetch" href="/assets/js/132.14868385.js"><link rel="prefetch" href="/assets/js/133.5d59d38f.js"><link rel="prefetch" href="/assets/js/134.98200ec4.js"><link rel="prefetch" href="/assets/js/135.1889d5ed.js"><link rel="prefetch" href="/assets/js/136.8232ca4b.js"><link rel="prefetch" href="/assets/js/137.cb857420.js"><link rel="prefetch" href="/assets/js/138.98b2f3e3.js"><link rel="prefetch" href="/assets/js/139.e97b406d.js"><link rel="prefetch" href="/assets/js/14.96f05fd6.js"><link rel="prefetch" href="/assets/js/140.765795a6.js"><link rel="prefetch" href="/assets/js/141.c8986716.js"><link rel="prefetch" href="/assets/js/142.3c299e5a.js"><link rel="prefetch" href="/assets/js/143.4a7ce816.js"><link rel="prefetch" href="/assets/js/144.b30c4dd5.js"><link rel="prefetch" href="/assets/js/145.395e78db.js"><link rel="prefetch" href="/assets/js/146.7309d65a.js"><link rel="prefetch" href="/assets/js/147.6ca56b09.js"><link rel="prefetch" href="/assets/js/148.9523fbd7.js"><link rel="prefetch" href="/assets/js/149.7ee5d9a0.js"><link rel="prefetch" href="/assets/js/15.00a41d76.js"><link rel="prefetch" href="/assets/js/150.1c1a7f03.js"><link rel="prefetch" href="/assets/js/151.18153162.js"><link rel="prefetch" href="/assets/js/152.069f29e3.js"><link rel="prefetch" href="/assets/js/153.6a3dc6de.js"><link rel="prefetch" href="/assets/js/154.f2a5261b.js"><link rel="prefetch" href="/assets/js/155.f2d103e9.js"><link rel="prefetch" href="/assets/js/156.c3b65df1.js"><link rel="prefetch" href="/assets/js/157.34511a64.js"><link rel="prefetch" href="/assets/js/158.8aa66653.js"><link rel="prefetch" href="/assets/js/159.d3d94269.js"><link rel="prefetch" href="/assets/js/16.f8244d9f.js"><link rel="prefetch" href="/assets/js/160.4f7a20ec.js"><link rel="prefetch" href="/assets/js/161.5bd8a616.js"><link rel="prefetch" href="/assets/js/162.1da711d0.js"><link rel="prefetch" href="/assets/js/163.7541ccac.js"><link rel="prefetch" href="/assets/js/164.e8c753cc.js"><link rel="prefetch" href="/assets/js/165.522129b8.js"><link rel="prefetch" href="/assets/js/166.da4fdc61.js"><link rel="prefetch" href="/assets/js/167.0f42336f.js"><link rel="prefetch" href="/assets/js/168.9198b90e.js"><link rel="prefetch" href="/assets/js/169.aac5618e.js"><link rel="prefetch" href="/assets/js/17.7c36b992.js"><link rel="prefetch" href="/assets/js/170.a1a650fa.js"><link rel="prefetch" href="/assets/js/171.0f6b20b9.js"><link rel="prefetch" href="/assets/js/172.3c156797.js"><link rel="prefetch" href="/assets/js/173.5c3b54e9.js"><link rel="prefetch" href="/assets/js/174.331377fb.js"><link rel="prefetch" href="/assets/js/175.bfc47da3.js"><link rel="prefetch" href="/assets/js/176.ff4394c7.js"><link rel="prefetch" href="/assets/js/18.fa5e17e4.js"><link rel="prefetch" href="/assets/js/19.da6c5067.js"><link rel="prefetch" href="/assets/js/2.0fb45f6d.js"><link rel="prefetch" href="/assets/js/20.a7789e92.js"><link rel="prefetch" href="/assets/js/21.6288f9df.js"><link rel="prefetch" href="/assets/js/22.4ed27a19.js"><link rel="prefetch" href="/assets/js/23.9fd82cf2.js"><link rel="prefetch" href="/assets/js/24.6bc3e311.js"><link rel="prefetch" href="/assets/js/25.fc9b22c4.js"><link rel="prefetch" href="/assets/js/26.68c47ff0.js"><link rel="prefetch" href="/assets/js/27.c6c2ad05.js"><link rel="prefetch" href="/assets/js/28.8d7caa91.js"><link rel="prefetch" href="/assets/js/29.7fddcc53.js"><link rel="prefetch" href="/assets/js/3.3b384044.js"><link rel="prefetch" href="/assets/js/30.bb36c15c.js"><link rel="prefetch" href="/assets/js/31.dd2bff10.js"><link rel="prefetch" href="/assets/js/32.29748a24.js"><link rel="prefetch" href="/assets/js/33.57396c05.js"><link rel="prefetch" href="/assets/js/34.23d5e611.js"><link rel="prefetch" href="/assets/js/35.64a07b0e.js"><link rel="prefetch" href="/assets/js/36.2232698d.js"><link rel="prefetch" href="/assets/js/37.5ce51e30.js"><link rel="prefetch" href="/assets/js/38.90cde717.js"><link rel="prefetch" href="/assets/js/39.c5a6bbe1.js"><link rel="prefetch" href="/assets/js/40.9bfb8855.js"><link rel="prefetch" href="/assets/js/41.25ec0258.js"><link rel="prefetch" href="/assets/js/42.8805ce47.js"><link rel="prefetch" href="/assets/js/43.99fa3bec.js"><link rel="prefetch" href="/assets/js/44.9a7b5c1e.js"><link rel="prefetch" href="/assets/js/45.a1d2927f.js"><link rel="prefetch" href="/assets/js/46.6d68bf87.js"><link rel="prefetch" href="/assets/js/47.205f1673.js"><link rel="prefetch" href="/assets/js/48.fa3181c4.js"><link rel="prefetch" href="/assets/js/49.85b05eb0.js"><link rel="prefetch" href="/assets/js/5.c479c5a3.js"><link rel="prefetch" href="/assets/js/50.e9be3814.js"><link rel="prefetch" href="/assets/js/51.f5feafa9.js"><link rel="prefetch" href="/assets/js/52.151b422f.js"><link rel="prefetch" href="/assets/js/53.47de4652.js"><link rel="prefetch" href="/assets/js/54.4136a734.js"><link rel="prefetch" href="/assets/js/55.37faa74b.js"><link rel="prefetch" href="/assets/js/56.b196c619.js"><link rel="prefetch" href="/assets/js/57.b48d149c.js"><link rel="prefetch" href="/assets/js/58.ba05ba43.js"><link rel="prefetch" href="/assets/js/59.fece8e99.js"><link rel="prefetch" href="/assets/js/6.2594d1b8.js"><link rel="prefetch" href="/assets/js/61.1f83b531.js"><link rel="prefetch" href="/assets/js/62.406f62b1.js"><link rel="prefetch" href="/assets/js/63.64addca5.js"><link rel="prefetch" href="/assets/js/64.4502132f.js"><link rel="prefetch" href="/assets/js/65.ffbfcdc8.js"><link rel="prefetch" href="/assets/js/66.92dd4e1a.js"><link rel="prefetch" href="/assets/js/67.c5e85b78.js"><link rel="prefetch" href="/assets/js/68.e800367e.js"><link rel="prefetch" href="/assets/js/69.f98ee3b1.js"><link rel="prefetch" href="/assets/js/7.dd151dd2.js"><link rel="prefetch" href="/assets/js/70.3dd5e2b7.js"><link rel="prefetch" href="/assets/js/71.9e356ce5.js"><link rel="prefetch" href="/assets/js/72.24307980.js"><link rel="prefetch" href="/assets/js/73.42138589.js"><link rel="prefetch" href="/assets/js/74.e08970a1.js"><link rel="prefetch" href="/assets/js/75.a14e9a0e.js"><link rel="prefetch" href="/assets/js/76.04daa4e5.js"><link rel="prefetch" href="/assets/js/77.7d850e82.js"><link rel="prefetch" href="/assets/js/78.07ffef66.js"><link rel="prefetch" href="/assets/js/79.7f7fb492.js"><link rel="prefetch" href="/assets/js/80.977ce65d.js"><link rel="prefetch" href="/assets/js/81.7f71c253.js"><link rel="prefetch" href="/assets/js/82.4aa1e03a.js"><link rel="prefetch" href="/assets/js/83.e6141202.js"><link rel="prefetch" href="/assets/js/84.ef239bed.js"><link rel="prefetch" href="/assets/js/85.c385784c.js"><link rel="prefetch" href="/assets/js/86.dae21885.js"><link rel="prefetch" href="/assets/js/87.24a300d3.js"><link rel="prefetch" href="/assets/js/88.b658524d.js"><link rel="prefetch" href="/assets/js/89.267b189e.js"><link rel="prefetch" href="/assets/js/90.64c4ea2c.js"><link rel="prefetch" href="/assets/js/91.29c692b2.js"><link rel="prefetch" href="/assets/js/92.f67d3b57.js"><link rel="prefetch" href="/assets/js/93.4fb1853f.js"><link rel="prefetch" href="/assets/js/94.aa25d64d.js"><link rel="prefetch" href="/assets/js/95.008381e7.js"><link rel="prefetch" href="/assets/js/96.f093e291.js"><link rel="prefetch" href="/assets/js/97.3fcc3216.js"><link rel="prefetch" href="/assets/js/98.b026a744.js"><link rel="prefetch" href="/assets/js/99.80260181.js"><link rel="prefetch" href="/assets/js/vuejs-paginate.5fba6729.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.d98ac11d.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div id="vuepress-theme-blog__global-layout"><section id="header-wrapper"><header id="header"><div class="header-wrapper"><div class="title"><a href="/" class="nav-link home-link">Matias Tang </a></div> <div class="header-right-wrap"><!----> <div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></div></header></section> <div id="mobile-header"><div class="mobile-header-bar"><div class="mobile-header-title"><a href="/" class="nav-link mobile-home-link">Matias Tang </a> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></div> <div class="mobile-menu-wrapper"><hr class="menu-divider"> <!----></div></div></div> <div class="content-wrapper"><div><div class="content__default"><h1 id="redis配置远程连接"><a href="#redis配置远程连接" class="header-anchor">#</a> Redis配置远程连接</h1> <h2 id="安装redis"><a href="#安装redis" class="header-anchor">#</a> 安装Redis</h2> <ul><li>查看版本</li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code>$ redis-server <span class="token parameter variable">-v</span>
+Command <span class="token string">'redis-server'</span> not found, but can be installed with:
+<span class="token function">apt</span> <span class="token function">install</span> redis-server
+</code></pre></div><ul><li>安装</li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code>$ <span class="token function">apt</span> <span class="token function">install</span> redis-server
+Reading package lists<span class="token punctuation">..</span>. Done
+Building dependency tree<span class="token punctuation">..</span>. Done
+Reading state information<span class="token punctuation">..</span>. Done
+The following packages were automatically installed and are no longer required:
+  libmariadb3 mariadb-common
+Use <span class="token string">'apt autoremove'</span> to remove them.
+The following additional packages will be installed:
+  libjemalloc2 liblua5.1-0 liblzf1 lua-bitop lua-cjson redis-tools
+Suggested packages:
+  ruby-redis
+The following NEW packages will be installed:
+  libjemalloc2 liblua5.1-0 liblzf1 lua-bitop lua-cjson redis-server redis-tools
+<span class="token number">0</span> upgraded, <span class="token number">7</span> newly installed, <span class="token number">0</span> to remove and <span class="token number">76</span> not upgraded.
+Need to get <span class="token number">1,273</span> kB of archives.
+After this operation, <span class="token number">5,725</span> kB of additional disk space will be used.
+Do you want to continue? <span class="token punctuation">[</span>Y/n<span class="token punctuation">]</span> y
+Get:1 http://mirrors.cloud.aliyuncs.com/ubuntu jammy/universe amd64 libjemalloc2 amd64 <span class="token number">5.2</span>.1-4ubuntu1 <span class="token punctuation">[</span><span class="token number">240</span> kB<span class="token punctuation">]</span>
+Get:2 http://mirrors.cloud.aliyuncs.com/ubuntu jammy/universe amd64 liblua5.1-0 amd64 <span class="token number">5.1</span>.5-8.1build4 <span class="token punctuation">[</span><span class="token number">99.9</span> kB<span class="token punctuation">]</span>
+Get:3 http://mirrors.cloud.aliyuncs.com/ubuntu jammy/universe amd64 liblzf1 amd64 <span class="token number">3.6</span>-3 <span class="token punctuation">[</span><span class="token number">7,444</span> B<span class="token punctuation">]</span>
+Get:4 http://mirrors.cloud.aliyuncs.com/ubuntu jammy/universe amd64 lua-bitop amd64 <span class="token number">1.0</span>.2-5 <span class="token punctuation">[</span><span class="token number">6,680</span> B<span class="token punctuation">]</span>
+Get:5 http://mirrors.cloud.aliyuncs.com/ubuntu jammy/universe amd64 lua-cjson amd64 <span class="token number">2.1</span>.0+dfsg-2.1 <span class="token punctuation">[</span><span class="token number">17.4</span> kB<span class="token punctuation">]</span>
+Get:6 http://mirrors.cloud.aliyuncs.com/ubuntu jammy/universe amd64 redis-tools amd64 <span class="token number">5</span>:6.0.16-1ubunt
+u1 <span class="token punctuation">[</span><span class="token number">856</span> kB<span class="token punctuation">]</span>
+Get:7 http://mirrors.cloud.aliyuncs.com/ubuntu jammy/universe amd64 redis-server amd64 <span class="token number">5</span>:6.0.16-1ubuntu1 <span class="token punctuation">[</span><span class="token number">45.9</span> kB<span class="token punctuation">]</span>
+Fetched <span class="token number">1,273</span> kB <span class="token keyword">in</span> 0s <span class="token punctuation">(</span><span class="token number">4,570</span> kB/s<span class="token punctuation">)</span>
+Selecting previously unselected package libjemalloc2:amd64.
+<span class="token punctuation">(</span>Reading database <span class="token punctuation">..</span>. <span class="token number">81040</span> files and directories currently installed.<span class="token punctuation">)</span>
+Preparing to unpack <span class="token punctuation">..</span>./0-libjemalloc2_5.2.1-4ubuntu1_amd64.deb <span class="token punctuation">..</span>.
+Unpacking libjemalloc2:amd64 <span class="token punctuation">(</span><span class="token number">5.2</span>.1-4ubuntu1<span class="token punctuation">)</span> <span class="token punctuation">..</span>.
+Selecting previously unselected package liblua5.1-0:amd64.
+Preparing to unpack <span class="token punctuation">..</span>./1-liblua5.1-0_5.1.5-8.1build4_amd64.deb <span class="token punctuation">..</span>.
+Unpacking liblua5.1-0:amd64 <span class="token punctuation">(</span><span class="token number">5.1</span>.5-8.1build4<span class="token punctuation">)</span> <span class="token punctuation">..</span>.
+Selecting previously unselected package liblzf1:amd64.
+Preparing to unpack <span class="token punctuation">..</span>./2-liblzf1_3.6-3_amd64.deb <span class="token punctuation">..</span>.
+Unpacking liblzf1:amd64 <span class="token punctuation">(</span><span class="token number">3.6</span>-3<span class="token punctuation">)</span> <span class="token punctuation">..</span>.
+Selecting previously unselected package lua-bitop:amd64.
+Preparing to unpack <span class="token punctuation">..</span>./3-lua-bitop_1.0.2-5_amd64.deb <span class="token punctuation">..</span>.
+Unpacking lua-bitop:amd64 <span class="token punctuation">(</span><span class="token number">1.0</span>.2-5<span class="token punctuation">)</span> <span class="token punctuation">..</span>.
+Selecting previously unselected package lua-cjson:amd64.
+Preparing to unpack <span class="token punctuation">..</span>./4-lua-cjson_2.1.0+dfsg-2.1_amd64.deb <span class="token punctuation">..</span>.
+Unpacking lua-cjson:amd64 <span class="token punctuation">(</span><span class="token number">2.1</span>.0+dfsg-2.1<span class="token punctuation">)</span> <span class="token punctuation">..</span>.
+Selecting previously unselected package redis-tools.
+Preparing to unpack <span class="token punctuation">..</span>./5-redis-tools_5%3a6.0.16-1ubuntu1_amd64.deb <span class="token punctuation">..</span>.
+Unpacking redis-tools <span class="token punctuation">(</span><span class="token number">5</span>:6.0.16-1ubuntu1<span class="token punctuation">)</span> <span class="token punctuation">..</span>.
+Selecting previously unselected package redis-server.
+Preparing to unpack <span class="token punctuation">..</span>./6-redis-server_5%3a6.0.16-1ubuntu1_amd64.deb <span class="token punctuation">..</span>.
+Unpacking redis-server <span class="token punctuation">(</span><span class="token number">5</span>:6.0.16-1ubuntu1<span class="token punctuation">)</span> <span class="token punctuation">..</span>.
+Setting up libjemalloc2:amd64 <span class="token punctuation">(</span><span class="token number">5.2</span>.1-4ubuntu1<span class="token punctuation">)</span> <span class="token punctuation">..</span>.
+Setting up lua-cjson:amd64 <span class="token punctuation">(</span><span class="token number">2.1</span>.0+dfsg-2.1<span class="token punctuation">)</span> <span class="token punctuation">..</span>.
+Setting up liblzf1:amd64 <span class="token punctuation">(</span><span class="token number">3.6</span>-3<span class="token punctuation">)</span> <span class="token punctuation">..</span>.
+Setting up lua-bitop:amd64 <span class="token punctuation">(</span><span class="token number">1.0</span>.2-5<span class="token punctuation">)</span> <span class="token punctuation">..</span>.
+Setting up liblua5.1-0:amd64 <span class="token punctuation">(</span><span class="token number">5.1</span>.5-8.1build4<span class="token punctuation">)</span> <span class="token punctuation">..</span>.
+Setting up redis-tools <span class="token punctuation">(</span><span class="token number">5</span>:6.0.16-1ubuntu1<span class="token punctuation">)</span> <span class="token punctuation">..</span>.
+Setting up redis-server <span class="token punctuation">(</span><span class="token number">5</span>:6.0.16-1ubuntu1<span class="token punctuation">)</span> <span class="token punctuation">..</span>.
+Created symlink /etc/systemd/system/redis.service → /lib/systemd/system/redis-server.service.
+Created symlink /etc/systemd/system/multi-user.target.wants/redis-server.service → /lib/systemd/system/redis-server.service.
+Processing triggers <span class="token keyword">for</span> man-db <span class="token punctuation">(</span><span class="token number">2.10</span>.2-1<span class="token punctuation">)</span> <span class="token punctuation">..</span>.
+Processing triggers <span class="token keyword">for</span> libc-bin <span class="token punctuation">(</span><span class="token number">2.35</span>-0ubuntu3.4<span class="token punctuation">)</span> <span class="token punctuation">..</span>.
+Scanning processes<span class="token punctuation">..</span>.
+Scanning candidates<span class="token punctuation">..</span>.
+Scanning linux images<span class="token punctuation">..</span>.
+
+Running kernel seems to be up-to-date.
+
+Restarting services<span class="token punctuation">..</span>.
+Service restarts being deferred:
+ systemctl restart ModemManager.service
+ systemctl restart aegis.service
+ systemctl restart atd.service
+ systemctl restart chrony.service
+ systemctl restart cron.service
+ /etc/needrestart/restart.d/dbus.service
+ systemctl restart getty@tty1.service
+ systemctl restart multipathd.service
+ systemctl restart networkd-dispatcher.service
+ systemctl restart nginx.service
+ systemctl restart packagekit.service
+ systemctl restart polkit.service
+ systemctl restart rsyslog.service
+ systemctl restart serial-getty@ttyS0.service
+ systemctl restart ssh.service
+ systemctl restart systemd-journald.service
+ systemctl restart systemd-logind.service
+ /etc/needrestart/restart.d/systemd-manager
+ systemctl restart systemd-networkd.service
+ systemctl restart systemd-resolved.service
+ systemctl restart systemd-udevd.service
+ systemctl restart tuned.service
+ systemctl restart udisks2.service
+ systemctl restart unattended-upgrades.service
+ systemctl restart user@0.service
+
+No containers need to be restarted.
+
+No user sessions are running outdated binaries.
+
+No VM guests are running outdated hypervisor <span class="token punctuation">(</span>qemu<span class="token punctuation">)</span> binaries on this host.
+</code></pre></div><h2 id="启动"><a href="#启动" class="header-anchor">#</a> 启动</h2> <p><code>service redis-server start</code>启动。
+重启<code>redis</code>，如<code>Ubuntu</code>中使用<code>service redis-server restart</code>命令。</p> <h2 id="服务器的安全组里面配置入口规则"><a href="#服务器的安全组里面配置入口规则" class="header-anchor">#</a> 服务器的安全组里面配置入口规则</h2> <p><em>注意</em> 配置了入口规则，可能不是及时生效哦。</p> <h2 id="配置允许远程连接"><a href="#配置允许远程连接" class="header-anchor">#</a> 配置允许远程连接</h2> <p>修改配置文件<code>/etc/redis/redis.conf</code>：</p> <p>注释<code>bind 127.0.0.1</code>以便允许远程连接，或者配置需要指定的地址。</p> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token comment">################################## NETWORK #####################################</span>
+
+<span class="token comment"># By default, if no &quot;bind&quot; configuration directive is specified, Redis listens</span>
+<span class="token comment"># for connections from all available network interfaces on the host machine.</span>
+<span class="token comment"># It is possible to listen to just one or multiple selected interfaces using</span>
+<span class="token comment"># the &quot;bind&quot; configuration directive, followed by one or more IP addresses.</span>
+<span class="token comment">#</span>
+<span class="token comment"># Examples:</span>
+<span class="token comment">#</span>
+<span class="token comment"># bind 192.168.1.100 10.0.0.1</span>
+<span class="token comment"># bind 127.0.0.1 ::1</span>
+<span class="token comment">#</span>
+<span class="token comment"># ~~~ WARNING ~~~ If the computer running Redis is directly exposed to the</span>
+<span class="token comment"># internet, binding to all the interfaces is dangerous and will expose the</span>
+<span class="token comment"># instance to everybody on the internet. So by default we uncomment the</span>
+<span class="token comment"># following bind directive, that will force Redis to listen only on the</span>
+<span class="token comment"># IPv4 loopback interface address (this means Redis will only be able to</span>
+<span class="token comment"># accept client connections from the same host that it is running on).</span>
+<span class="token comment">#</span>
+<span class="token comment"># IF YOU ARE SURE YOU WANT YOUR INSTANCE TO LISTEN TO ALL THE INTERFACES</span>
+<span class="token comment"># JUST COMMENT OUT THE FOLLOWING LINE.</span>
+<span class="token comment"># ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span>
+<span class="token comment"># bind 127.0.0.1 ::1</span>
+</code></pre></div><p>修改<code>protected-mode</code>为<code>no</code>以允许远程连接。</p> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token comment"># Protected mode is a layer of security protection, in order to avoid that</span>
+<span class="token comment"># Redis instances left open on the internet are accessed and exploited.</span>
+<span class="token comment">#</span>
+<span class="token comment"># When protected mode is on and if:</span>
+<span class="token comment">#</span>
+<span class="token comment"># 1) The server is not binding explicitly to a set of addresses using the</span>
+<span class="token comment">#    &quot;bind&quot; directive.</span>
+<span class="token comment"># 2) No password is configured.</span>
+<span class="token comment">#</span>
+<span class="token comment"># The server only accepts connections from clients connecting from the</span>
+<span class="token comment"># IPv4 and IPv6 loopback addresses 127.0.0.1 and ::1, and from Unix domain</span>
+<span class="token comment"># sockets.</span>
+<span class="token comment">#</span>
+<span class="token comment"># By default protected mode is enabled. You should disable it only if</span>
+<span class="token comment"># you are sure you want clients from other hosts to connect to Redis</span>
+<span class="token comment"># even if no authentication is configured, nor a specific set of interfaces</span>
+<span class="token comment"># are explicitly listed using the &quot;bind&quot; directive.</span>
+protected-mode no
+</code></pre></div><p>重启<code>redis</code>，如<code>Ubuntu</code>中使用<code>service redis-server restart</code>命令。</p> <h2 id="配置密码"><a href="#配置密码" class="header-anchor">#</a> 配置密码</h2> <p>配置文件中设置<code>requirepass PASSWORD</code>，其中<code>PASSWORD</code>就是设置的密码，可以自己随便设置。</p> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token comment">################################## SECURITY ###################################</span>
+
+<span class="token comment"># Require clients to issue AUTH &lt;PASSWORD&gt; before processing any other</span>
+<span class="token comment"># commands.  This might be useful in environments in which you do not trust</span>
+<span class="token comment"># others with access to the host running redis-server.</span>
+<span class="token comment">#</span>
+<span class="token comment"># This should stay commented out for backward compatibility and because most</span>
+<span class="token comment"># people do not need auth (e.g. they run their own servers).</span>
+<span class="token comment">#</span>
+<span class="token comment"># Warning: since Redis is pretty fast an outside user can try up to</span>
+<span class="token comment"># 150k passwords per second against a good box. This means that you should</span>
+<span class="token comment"># use a very strong password otherwise it will be very easy to break.</span>
+<span class="token comment">#</span>
+requirepass ********
+
+<span class="token comment"># Command renaming.</span>
+<span class="token comment">#</span>
+<span class="token comment"># It is possible to change the name of dangerous commands in a shared</span>
+<span class="token comment"># environment. For instance the CONFIG command may be renamed into something</span>
+<span class="token comment"># hard to guess so that it will still be available for internal-use tools</span>
+<span class="token comment"># but not available for general clients.</span>
+<span class="token comment">#</span>
+<span class="token comment"># Example:</span>
+<span class="token comment">#</span>
+<span class="token comment"># rename-command CONFIG b840fc02d524045429941cc15f59e41cb7be6c52</span>
+<span class="token comment">#</span>
+<span class="token comment"># It is also possible to completely kill a command by renaming it into</span>
+<span class="token comment"># an empty string:</span>
+<span class="token comment">#</span>
+<span class="token comment"># rename-command CONFIG &quot;&quot;</span>
+<span class="token comment">#</span>
+<span class="token comment"># Please note that changing the name of commands that are logged into the</span>
+<span class="token comment"># AOF file or transmitted to replicas may cause problems.</span>
+</code></pre></div><ul><li><code>Redis 6</code>中<code>requirepass</code>只是兼容配置</li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token comment">################################## SECURITY ###################################</span>
+
+<span class="token comment"># Warning: since Redis is pretty fast, an outside user can try up to</span>
+<span class="token comment"># 1 million passwords per second against a modern box. This means that you</span>
+<span class="token comment"># should use very strong passwords, otherwise they will be very easy to break.</span>
+<span class="token comment"># Note that because the password is really a shared secret between the client</span>
+<span class="token comment"># and the server, and should not be memorized by any human, the password</span>
+<span class="token comment"># can be easily a long string from /dev/urandom or whatever, so by using a</span>
+<span class="token comment"># long and unguessable password no brute force attack will be possible.</span>
+
+<span class="token comment"># Redis ACL users are defined in the following format:</span>
+<span class="token comment">#</span>
+<span class="token comment">#   user &lt;username&gt; ... acl rules ...</span>
+<span class="token comment">#</span>
+<span class="token comment"># For example:</span>
+<span class="token comment">#</span>
+<span class="token comment">#   user worker +@list +@connection ~jobs:* on &gt;ffa9203c493aa99</span>
+<span class="token comment">#</span>
+<span class="token comment"># The special username &quot;default&quot; is used for new connections. If this user</span>
+<span class="token comment"># has the &quot;nopass&quot; rule, then new connections will be immediately authenticated</span>
+<span class="token comment"># as the &quot;default&quot; user without the need of any password provided via the</span>
+<span class="token comment"># AUTH command. Otherwise if the &quot;default&quot; user is not flagged with &quot;nopass&quot;</span>
+<span class="token comment"># the connections will start in not authenticated state, and will require</span>
+<span class="token comment"># AUTH (or the HELLO command AUTH option) in order to be authenticated and</span>
+<span class="token comment"># start to work.</span>
+<span class="token comment">#</span>
+<span class="token comment"># The ACL rules that describe what a user can do are the following:</span>
+<span class="token comment">#</span>
+<span class="token comment">#  on           Enable the user: it is possible to authenticate as this user.</span>
+<span class="token comment">#  off          Disable the user: it's no longer possible to authenticate</span>
+<span class="token comment">#               with this user, however the already authenticated connections</span>
+<span class="token comment">#               will still work.</span>
+<span class="token comment">#  +&lt;command&gt;   Allow the execution of that command</span>
+<span class="token comment">#  -&lt;command&gt;   Disallow the execution of that command</span>
+<span class="token comment">#  +@&lt;category&gt; Allow the execution of all the commands in such category</span>
+<span class="token comment">#               with valid categories are like @admin, @set, @sortedset, ...</span>
+<span class="token comment">#               and so forth, see the full list in the server.c file where</span>
+<span class="token comment">#               the Redis command table is described and defined.</span>
+<span class="token comment">#               The special category @all means all the commands, but currently</span>
+<span class="token comment">#               present in the server, and that will be loaded in the future</span>
+<span class="token comment">#               via modules.</span>
+<span class="token comment">#  +&lt;command&gt;|subcommand    Allow a specific subcommand of an otherwise</span>
+<span class="token comment">#                           disabled command. Note that this form is not</span>
+<span class="token comment">#                           allowed as negative like -DEBUG|SEGFAULT, but</span>
+<span class="token comment">#                           only additive starting with &quot;+&quot;.</span>
+<span class="token comment">#  allcommands  Alias for +@all. Note that it implies the ability to execute</span>
+<span class="token comment">#               all the future commands loaded via the modules system.</span>
+<span class="token comment">#  nocommands   Alias for -@all.</span>
+<span class="token comment">#  ~&lt;pattern&gt;   Add a pattern of keys that can be mentioned as part of</span>
+<span class="token comment">#               commands. For instance ~* allows all the keys. The pattern</span>
+<span class="token comment">#               is a glob-style pattern like the one of KEYS.</span>
+<span class="token comment">#               It is possible to specify multiple patterns.</span>
+<span class="token comment">#  allkeys      Alias for ~*</span>
+<span class="token comment">#  resetkeys    Flush the list of allowed keys patterns.</span>
+<span class="token comment">#  &gt;&lt;password&gt;  Add this password to the list of valid password for the user.</span>
+<span class="token comment">#               For example &gt;mypass will add &quot;mypass&quot; to the list.</span>
+<span class="token comment">#               This directive clears the &quot;nopass&quot; flag (see later).</span>
+<span class="token comment">#  &lt;&lt;password&gt;  Remove this password from the list of valid passwords.</span>
+<span class="token comment">#  nopass       All the set passwords of the user are removed, and the user</span>
+<span class="token comment">#               is flagged as requiring no password: it means that every</span>
+<span class="token comment">#               password will work against this user. If this directive is</span>
+<span class="token comment">#               used for the default user, every new connection will be</span>
+<span class="token comment">#               immediately authenticated with the default user without</span>
+<span class="token comment">#               any explicit AUTH command required. Note that the &quot;resetpass&quot;</span>
+<span class="token comment">#               directive will clear this condition.</span>
+<span class="token comment">#  resetpass    Flush the list of allowed passwords. Moreover removes the</span>
+<span class="token comment">#               &quot;nopass&quot; status. After &quot;resetpass&quot; the user has no associated</span>
+<span class="token comment">#               passwords and there is no way to authenticate without adding</span>
+<span class="token comment">#               some password (or setting it as &quot;nopass&quot; later).</span>
+<span class="token comment">#  reset        Performs the following actions: resetpass, resetkeys, off,</span>
+<span class="token comment">#               -@all. The user returns to the same state it has immediately</span>
+<span class="token comment">#               after its creation.</span>
+<span class="token comment">#</span>
+<span class="token comment"># ACL rules can be specified in any order: for instance you can start with</span>
+<span class="token comment"># passwords, then flags, or key patterns. However note that the additive</span>
+<span class="token comment"># and subtractive rules will CHANGE MEANING depending on the ordering.</span>
+<span class="token comment"># For instance see the following example:</span>
+<span class="token comment">#</span>
+<span class="token comment">#   user alice on +@all -DEBUG ~* &gt;somepassword</span>
+<span class="token comment">#</span>
+<span class="token comment"># This will allow &quot;alice&quot; to use all the commands with the exception of the</span>
+<span class="token comment"># DEBUG command, since +@all added all the commands to the set of the commands</span>
+<span class="token comment"># alice can use, and later DEBUG was removed. However if we invert the order</span>
+<span class="token comment"># of two ACL rules the result will be different:</span>
+<span class="token comment">#</span>
+<span class="token comment">#   user alice on -DEBUG +@all ~* &gt;somepassword</span>
+<span class="token comment">#</span>
+<span class="token comment"># Now DEBUG was removed when alice had yet no commands in the set of allowed</span>
+<span class="token comment"># commands, later all the commands are added, so the user will be able to</span>
+<span class="token comment"># execute everything.</span>
+<span class="token comment">#</span>
+<span class="token comment"># Basically ACL rules are processed left-to-right.</span>
+<span class="token comment">#</span>
+<span class="token comment"># For more information about ACL configuration please refer to</span>
+<span class="token comment"># the Redis web site at https://redis.io/topics/acl</span>
+
+<span class="token comment"># ACL LOG</span>
+<span class="token comment">#</span>
+<span class="token comment"># The ACL Log tracks failed commands and authentication events associated</span>
+<span class="token comment"># with ACLs. The ACL Log is useful to troubleshoot failed commands blocked</span>
+<span class="token comment"># by ACLs. The ACL Log is stored in memory. You can reclaim memory with</span>
+<span class="token comment"># ACL LOG RESET. Define the maximum entry length of the ACL Log below.</span>
+acllog-max-len <span class="token number">128</span>
+
+<span class="token comment"># Using an external ACL file</span>
+<span class="token comment">#</span>
+<span class="token comment"># Instead of configuring users here in this file, it is possible to use</span>
+<span class="token comment"># a stand-alone file just listing users. The two methods cannot be mixed:</span>
+<span class="token comment"># if you configure users here and at the same time you activate the external</span>
+<span class="token comment"># ACL file, the server will refuse to start.</span>
+<span class="token comment">#</span>
+<span class="token comment"># The format of the external ACL user file is exactly the same as the</span>
+<span class="token comment"># format that is used inside redis.conf to describe users.</span>
+<span class="token comment">#</span>
+<span class="token comment"># aclfile /etc/redis/users.acl</span>
+
+<span class="token comment"># IMPORTANT NOTE: starting with Redis 6 &quot;requirepass&quot; is just a compatibility</span>
+<span class="token comment"># layer on top of the new ACL system. The option effect will be just setting</span>
+<span class="token comment"># the password for the default user. Clients will still authenticate using</span>
+<span class="token comment"># AUTH &lt;password&gt; as usually, or more explicitly with AUTH default &lt;password&gt;</span>
+<span class="token comment"># if they follow the new protocol: both will work.</span>
+<span class="token comment">#</span>
+requirepass ********
+
+<span class="token comment"># Command renaming (DEPRECATED).</span>
+</code></pre></div><p>设置<code>user user-name</code>以指定用户名，可以不设置。</p> <h2 id="本地进入reids客户端"><a href="#本地进入reids客户端" class="header-anchor">#</a> 本地进入Reids客户端</h2> <div class="language-sh extra-class"><pre class="language-sh"><code>$ redis-cli
+<span class="token number">127.0</span>.0.1:637<span class="token operator"><span class="token file-descriptor important">9</span>&gt;</span>
+</code></pre></div><p><code>exit</code>可以退出<code>redis</code>.</p> <h2 id="连接redis被拒绝"><a href="#连接redis被拒绝" class="header-anchor">#</a> 连接redis被拒绝</h2> <p>1、网络不通</p> <p>可以用ping ip的命令测试</p> <p>2、端口不通</p> <p>可以用 telnet ip port 的命令测试</p> <p>3、密码不对</p> <p>4、redis conf文件bind的ip不对</p> <p>解决Redis被拒绝连接问题（redis被拒绝怎么解决）
+解决Redis被拒绝连接问题</p> <p>Redis是一款高性能的键值对存储数据库，很多应用在使用它来进行数据缓存和持久化。但在使用过程中，有些用户会遇到Redis被拒绝连接的问题，因此本文将介绍如何解决这个问题。</p> <ol><li>检查Redis是否正确安装和启动</li></ol> <p>我们需要检查Redis是否已正确安装且正在运行。在Linux系统中，您可以使用以下命令来检查Redis是否正在运行：</p> <p>$ systemctl status redis
+如果Redis没有运行，则可以使用以下命令启动Redis：</p> <p>$ systemctl start redis
+2. 检查Redis配置文件是否正确</p> <p>Redis的配置文件通常位于/etc/redis/redis.conf或/etc/redis.conf，我们需要确保配置文件中正确配置了Redis实例的主机地址、端口号以及认证密码。如果有多个Redis实例，则需要检查每个配置文件。</p> <p>bind 127.0.0.1
+port 6379
+requirepass mypassword
+3. 检查防火墙</p> <p>如果Redis服务器的防火墙配置不正确，它可能会拒绝来自客户端的连接请求。因此，我们需要确保Redis服务器端口的防火墙规则正确。</p> <p>在Linux系统中，可以使用以下命令检查防火墙规则：</p> <p>$ sudo iptables -L
+如果有防火墙规则阻止了Redis端口，您可以使用以下命令来允许Redis端口：</p> <p>$ sudo iptables -A INPUT -p tcp --dport 6379 -j ACCEPT
+4. 检查SELinux</p> <p>在某些情况下，SELinux可能会阻止Redis接受来自客户端的连接请求。可以使用以下命令来检查SELinux状态：</p> <p>$ getenforce
+如果SELinux状态为enforcing，可以使用以下命令暂时禁用它：</p> <p>$ setenforce 0
+如果您想永久禁用SELinux，可以编辑/etc/selinux/config文件，并将SELINUX设置为disabled。</p> <ol start="5"><li>检查网络连接</li></ol> <p>如果Redis服务器和客户端在不同的网络上，则可能需要检查网络连接是否正确。您可以使用以下命令在Redis服务器上测试与客户端的网络连接：</p> <p>$ ping client_ip_address
+如果ping测试成功，则网络连接正常。如果ping测试失败，则需要检查网络配置是否正确。在大多数情况下，这是由于防火墙规则造成的。</p> <p>结论</p> <p>Redis是一款强大的键值对存储数据库，它被广泛用于数据缓存和持久化。但是，当Redis被拒绝连接时，它可能会影响应用程序的性能。通过上述几个步骤，您可以轻松地解决Redis被拒绝连接的问题。如果您仍遇到问题，请参考Redis官方文档或寻求其他Redis用户的帮助。</p></div></div></div> <footer class="footer" data-v-3d9deeb8><div class="footer-left-wrap" data-v-3d9deeb8><ul class="contact" data-v-3d9deeb8></ul></div> <div class="footer-right-wrap" data-v-3d9deeb8><ul class="copyright" data-v-3d9deeb8></ul></div></footer></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.29e3e174.js" defer></script><script src="/assets/js/4.7296a041.js" defer></script><script src="/assets/js/8.58afedc8.js" defer></script><script src="/assets/js/60.a110b6c9.js" defer></script>
+  </body>
+</html>

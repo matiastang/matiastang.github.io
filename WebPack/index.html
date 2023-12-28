@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Matias Tang</title>
+    <meta name="generator" content="VuePress 1.9.10">
+    
+    <meta name="description" content="
+WebPack
+
+六个核心概念：
+
+Entry：入口，这是Webpack执行构 ...">
+    
+    <link rel="preload" href="/assets/css/0.styles.d98ac11d.css" as="style"><link rel="preload" href="/assets/js/app.29e3e174.js" as="script"><link rel="preload" href="/assets/js/4.7296a041.js" as="script"><link rel="preload" href="/assets/js/8.58afedc8.js" as="script"><link rel="preload" href="/assets/js/65.ffbfcdc8.js" as="script"><link rel="prefetch" href="/assets/js/1.1ee916e6.js"><link rel="prefetch" href="/assets/js/100.7148729e.js"><link rel="prefetch" href="/assets/js/101.5494263d.js"><link rel="prefetch" href="/assets/js/102.8cb3c964.js"><link rel="prefetch" href="/assets/js/103.90eee404.js"><link rel="prefetch" href="/assets/js/104.b2031d3c.js"><link rel="prefetch" href="/assets/js/105.c1d2d862.js"><link rel="prefetch" href="/assets/js/106.611a3845.js"><link rel="prefetch" href="/assets/js/107.d38b88db.js"><link rel="prefetch" href="/assets/js/108.75a84968.js"><link rel="prefetch" href="/assets/js/109.7a02eb7e.js"><link rel="prefetch" href="/assets/js/11.905d9209.js"><link rel="prefetch" href="/assets/js/110.0b80828f.js"><link rel="prefetch" href="/assets/js/111.ba8921c3.js"><link rel="prefetch" href="/assets/js/112.c1a8b92f.js"><link rel="prefetch" href="/assets/js/113.86479cd5.js"><link rel="prefetch" href="/assets/js/114.92b2ac9d.js"><link rel="prefetch" href="/assets/js/115.970f137f.js"><link rel="prefetch" href="/assets/js/116.c70bf4a6.js"><link rel="prefetch" href="/assets/js/117.2cd3d61f.js"><link rel="prefetch" href="/assets/js/118.8388070b.js"><link rel="prefetch" href="/assets/js/119.29d78674.js"><link rel="prefetch" href="/assets/js/12.0d530c63.js"><link rel="prefetch" href="/assets/js/120.ace7b6ac.js"><link rel="prefetch" href="/assets/js/121.569fe3f3.js"><link rel="prefetch" href="/assets/js/122.4712657d.js"><link rel="prefetch" href="/assets/js/123.9f478f5f.js"><link rel="prefetch" href="/assets/js/124.fe3a61da.js"><link rel="prefetch" href="/assets/js/125.09c50f4d.js"><link rel="prefetch" href="/assets/js/126.666b658b.js"><link rel="prefetch" href="/assets/js/127.05eecf86.js"><link rel="prefetch" href="/assets/js/128.5094ca35.js"><link rel="prefetch" href="/assets/js/129.0ac0387d.js"><link rel="prefetch" href="/assets/js/13.632a566f.js"><link rel="prefetch" href="/assets/js/130.0427221a.js"><link rel="prefetch" href="/assets/js/131.0902b291.js"><link rel="prefetch" href="/assets/js/132.14868385.js"><link rel="prefetch" href="/assets/js/133.5d59d38f.js"><link rel="prefetch" href="/assets/js/134.98200ec4.js"><link rel="prefetch" href="/assets/js/135.1889d5ed.js"><link rel="prefetch" href="/assets/js/136.8232ca4b.js"><link rel="prefetch" href="/assets/js/137.cb857420.js"><link rel="prefetch" href="/assets/js/138.98b2f3e3.js"><link rel="prefetch" href="/assets/js/139.e97b406d.js"><link rel="prefetch" href="/assets/js/14.96f05fd6.js"><link rel="prefetch" href="/assets/js/140.765795a6.js"><link rel="prefetch" href="/assets/js/141.c8986716.js"><link rel="prefetch" href="/assets/js/142.3c299e5a.js"><link rel="prefetch" href="/assets/js/143.4a7ce816.js"><link rel="prefetch" href="/assets/js/144.b30c4dd5.js"><link rel="prefetch" href="/assets/js/145.395e78db.js"><link rel="prefetch" href="/assets/js/146.7309d65a.js"><link rel="prefetch" href="/assets/js/147.6ca56b09.js"><link rel="prefetch" href="/assets/js/148.9523fbd7.js"><link rel="prefetch" href="/assets/js/149.7ee5d9a0.js"><link rel="prefetch" href="/assets/js/15.00a41d76.js"><link rel="prefetch" href="/assets/js/150.1c1a7f03.js"><link rel="prefetch" href="/assets/js/151.18153162.js"><link rel="prefetch" href="/assets/js/152.069f29e3.js"><link rel="prefetch" href="/assets/js/153.6a3dc6de.js"><link rel="prefetch" href="/assets/js/154.f2a5261b.js"><link rel="prefetch" href="/assets/js/155.f2d103e9.js"><link rel="prefetch" href="/assets/js/156.c3b65df1.js"><link rel="prefetch" href="/assets/js/157.34511a64.js"><link rel="prefetch" href="/assets/js/158.8aa66653.js"><link rel="prefetch" href="/assets/js/159.d3d94269.js"><link rel="prefetch" href="/assets/js/16.f8244d9f.js"><link rel="prefetch" href="/assets/js/160.4f7a20ec.js"><link rel="prefetch" href="/assets/js/161.5bd8a616.js"><link rel="prefetch" href="/assets/js/162.1da711d0.js"><link rel="prefetch" href="/assets/js/163.7541ccac.js"><link rel="prefetch" href="/assets/js/164.e8c753cc.js"><link rel="prefetch" href="/assets/js/165.522129b8.js"><link rel="prefetch" href="/assets/js/166.da4fdc61.js"><link rel="prefetch" href="/assets/js/167.0f42336f.js"><link rel="prefetch" href="/assets/js/168.9198b90e.js"><link rel="prefetch" href="/assets/js/169.aac5618e.js"><link rel="prefetch" href="/assets/js/17.7c36b992.js"><link rel="prefetch" href="/assets/js/170.a1a650fa.js"><link rel="prefetch" href="/assets/js/171.0f6b20b9.js"><link rel="prefetch" href="/assets/js/172.3c156797.js"><link rel="prefetch" href="/assets/js/173.5c3b54e9.js"><link rel="prefetch" href="/assets/js/174.331377fb.js"><link rel="prefetch" href="/assets/js/175.bfc47da3.js"><link rel="prefetch" href="/assets/js/176.ff4394c7.js"><link rel="prefetch" href="/assets/js/18.fa5e17e4.js"><link rel="prefetch" href="/assets/js/19.da6c5067.js"><link rel="prefetch" href="/assets/js/2.0fb45f6d.js"><link rel="prefetch" href="/assets/js/20.a7789e92.js"><link rel="prefetch" href="/assets/js/21.6288f9df.js"><link rel="prefetch" href="/assets/js/22.4ed27a19.js"><link rel="prefetch" href="/assets/js/23.9fd82cf2.js"><link rel="prefetch" href="/assets/js/24.6bc3e311.js"><link rel="prefetch" href="/assets/js/25.fc9b22c4.js"><link rel="prefetch" href="/assets/js/26.68c47ff0.js"><link rel="prefetch" href="/assets/js/27.c6c2ad05.js"><link rel="prefetch" href="/assets/js/28.8d7caa91.js"><link rel="prefetch" href="/assets/js/29.7fddcc53.js"><link rel="prefetch" href="/assets/js/3.3b384044.js"><link rel="prefetch" href="/assets/js/30.bb36c15c.js"><link rel="prefetch" href="/assets/js/31.dd2bff10.js"><link rel="prefetch" href="/assets/js/32.29748a24.js"><link rel="prefetch" href="/assets/js/33.57396c05.js"><link rel="prefetch" href="/assets/js/34.23d5e611.js"><link rel="prefetch" href="/assets/js/35.64a07b0e.js"><link rel="prefetch" href="/assets/js/36.2232698d.js"><link rel="prefetch" href="/assets/js/37.5ce51e30.js"><link rel="prefetch" href="/assets/js/38.90cde717.js"><link rel="prefetch" href="/assets/js/39.c5a6bbe1.js"><link rel="prefetch" href="/assets/js/40.9bfb8855.js"><link rel="prefetch" href="/assets/js/41.25ec0258.js"><link rel="prefetch" href="/assets/js/42.8805ce47.js"><link rel="prefetch" href="/assets/js/43.99fa3bec.js"><link rel="prefetch" href="/assets/js/44.9a7b5c1e.js"><link rel="prefetch" href="/assets/js/45.a1d2927f.js"><link rel="prefetch" href="/assets/js/46.6d68bf87.js"><link rel="prefetch" href="/assets/js/47.205f1673.js"><link rel="prefetch" href="/assets/js/48.fa3181c4.js"><link rel="prefetch" href="/assets/js/49.85b05eb0.js"><link rel="prefetch" href="/assets/js/5.c479c5a3.js"><link rel="prefetch" href="/assets/js/50.e9be3814.js"><link rel="prefetch" href="/assets/js/51.f5feafa9.js"><link rel="prefetch" href="/assets/js/52.151b422f.js"><link rel="prefetch" href="/assets/js/53.47de4652.js"><link rel="prefetch" href="/assets/js/54.4136a734.js"><link rel="prefetch" href="/assets/js/55.37faa74b.js"><link rel="prefetch" href="/assets/js/56.b196c619.js"><link rel="prefetch" href="/assets/js/57.b48d149c.js"><link rel="prefetch" href="/assets/js/58.ba05ba43.js"><link rel="prefetch" href="/assets/js/59.fece8e99.js"><link rel="prefetch" href="/assets/js/6.2594d1b8.js"><link rel="prefetch" href="/assets/js/60.a110b6c9.js"><link rel="prefetch" href="/assets/js/61.1f83b531.js"><link rel="prefetch" href="/assets/js/62.406f62b1.js"><link rel="prefetch" href="/assets/js/63.64addca5.js"><link rel="prefetch" href="/assets/js/64.4502132f.js"><link rel="prefetch" href="/assets/js/66.92dd4e1a.js"><link rel="prefetch" href="/assets/js/67.c5e85b78.js"><link rel="prefetch" href="/assets/js/68.e800367e.js"><link rel="prefetch" href="/assets/js/69.f98ee3b1.js"><link rel="prefetch" href="/assets/js/7.dd151dd2.js"><link rel="prefetch" href="/assets/js/70.3dd5e2b7.js"><link rel="prefetch" href="/assets/js/71.9e356ce5.js"><link rel="prefetch" href="/assets/js/72.24307980.js"><link rel="prefetch" href="/assets/js/73.42138589.js"><link rel="prefetch" href="/assets/js/74.e08970a1.js"><link rel="prefetch" href="/assets/js/75.a14e9a0e.js"><link rel="prefetch" href="/assets/js/76.04daa4e5.js"><link rel="prefetch" href="/assets/js/77.7d850e82.js"><link rel="prefetch" href="/assets/js/78.07ffef66.js"><link rel="prefetch" href="/assets/js/79.7f7fb492.js"><link rel="prefetch" href="/assets/js/80.977ce65d.js"><link rel="prefetch" href="/assets/js/81.7f71c253.js"><link rel="prefetch" href="/assets/js/82.4aa1e03a.js"><link rel="prefetch" href="/assets/js/83.e6141202.js"><link rel="prefetch" href="/assets/js/84.ef239bed.js"><link rel="prefetch" href="/assets/js/85.c385784c.js"><link rel="prefetch" href="/assets/js/86.dae21885.js"><link rel="prefetch" href="/assets/js/87.24a300d3.js"><link rel="prefetch" href="/assets/js/88.b658524d.js"><link rel="prefetch" href="/assets/js/89.267b189e.js"><link rel="prefetch" href="/assets/js/90.64c4ea2c.js"><link rel="prefetch" href="/assets/js/91.29c692b2.js"><link rel="prefetch" href="/assets/js/92.f67d3b57.js"><link rel="prefetch" href="/assets/js/93.4fb1853f.js"><link rel="prefetch" href="/assets/js/94.aa25d64d.js"><link rel="prefetch" href="/assets/js/95.008381e7.js"><link rel="prefetch" href="/assets/js/96.f093e291.js"><link rel="prefetch" href="/assets/js/97.3fcc3216.js"><link rel="prefetch" href="/assets/js/98.b026a744.js"><link rel="prefetch" href="/assets/js/99.80260181.js"><link rel="prefetch" href="/assets/js/vuejs-paginate.5fba6729.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.d98ac11d.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div id="vuepress-theme-blog__global-layout"><section id="header-wrapper"><header id="header"><div class="header-wrapper"><div class="title"><a href="/" class="nav-link home-link">Matias Tang </a></div> <div class="header-right-wrap"><!----> <div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></div></header></section> <div id="mobile-header"><div class="mobile-header-bar"><div class="mobile-header-title"><a href="/" class="nav-link mobile-home-link">Matias Tang </a> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></div> <div class="mobile-menu-wrapper"><hr class="menu-divider"> <!----></div></div></div> <div class="content-wrapper"><div><div class="content__default"><h1 id="webpack"><a href="#webpack" class="header-anchor">#</a> WebPack</h1> <h2 id="六个核心概念"><a href="#六个核心概念" class="header-anchor">#</a> 六个核心概念：</h2> <p>Entry：入口，这是Webpack执行构建的第一步，可理解为输入。</p> <p>Module：模块，在Webpack中一切皆模块，一个模块即为一个文件。Webpack会从Entry开始递归找出所有的依赖模块。</p> <p>Chunk：代码块，一个Chunk由多个模块组合而成，它用于代码合并与分割。</p> <p>Loader：模块转换器，用于将模块的原内容按照需求转换成新内容。</p> <p>Plugin：扩展插件，在Webpack构建过程的特定时机注入扩展逻辑，用来改变或优化构建结果。</p> <p>Output：输出结果，源码在Webpack中经过一系列处理后而得出的最终结果。</p> <h2 id="构建过程"><a href="#构建过程" class="header-anchor">#</a> 构建过程：</h2> <p>Webpack 在启动后，会从 Entry 开始，递归解析 Entry 依赖的所有 Module，每找到一个 Module，就会根据 Module.rules 里配置的 Loader 规则进行相应的转换处理；</p> <p>对 Module 进行转换后，再解析出当前 Module 依赖的 Module ，得到了每个 Module 被转换/翻译后的最终内容以及它们之间的依赖关系；</p> <p>这些 Module 会以 Entry 为单位进行分组，即为一个 Chunk。（因此一个 Chunk，就是一个 Entry 及其所有依赖的 Module 合并的结果）再把每个 Chunk 转换成一个单独的文件加入到输出列表，这步是可以修改输出内容的最后机会；</p> <p>在确定好输出内容后，根据配置确定输出的路径和文件名，将所有的 Chunk 转换成文件输出 Output。</p> <p>在整个构建流程中，Webpack 会在恰当的时机执行 Plugin 里定义的逻辑，从而完成 Plugin 插件的优化任务。</p> <p>31.Webpack打包过程
+一切源代码文件均可通过各种 Loader 转换为 JS 模块（默认只支持js文件），模块之间可以互相引用
+webpack 通过入口递归处理各模块引用关系，最后输出为一个或多个产物包文件（bundle）
+每一个入口都是一个块组（chunk group），在不考虑分包的情况下一个块组中只有一个代码块，这个 chunk 包含递归后的所有模块，都有对立打包后的输出文件（bundle）
+32.使⽤webpack实现vue项⽬打包
+全局依赖：</p> <p>1.安装项目依赖</p> <p>2.引入 Webpack, webpack-cli</p> <p>common.js - module：</p> <p>1.将Vue组件编译成普通的JavaScript模块vue-template-compiler vue-loader</p> <p>2.需要Webpack在打包过程中同时处理其他ES6特性的转换 babel-loader @babel/core @babel/preset-env</p> <p>3.引入资源模块加载处理CSS文件 css-loade vue-style-loader</p> <p>4.处理 .less 文件的资源模块加载less less-loader style-loader</p> <p>5.处理 图片资源模块file-load url-loader</p> <p>6.ESLint 结合Webpack eslint eslint-loader eslint-friendly-formatter 创建 .eslintrc 文件并配置</p> <p>common.js - plugins：</p> <p>1.通过 Webpack 输出 HTML 文件 html-webpack-plugin</p> <p>开发 dev.js:</p> <p>1.希望在公共配置原有基础上添加插件而不是覆盖 webpack-merge</p> <p>2.提供一个开发服务器 webpack-dev-server 集成 自动编译 和 自动刷新浏览器（热更新），打包结果暂存到内存中（减少磁盘读写）</p> <p>3.Source Map：调试时将产物代码显示回源代码</p> <p>4.热更新HMR：解决自动刷新导致页面状态丢失</p> <p>在package.json 为 serve 定义 webpack-dev-server --config webpack.dev.js</p> <p>生产 prod.js:</p> <p>1.打包之前自动清除目录 clean-webpack-plugin</p> <p>2.拷贝静态文件至输出目录 copy-webpack-plugin</p> <p>3.Define Plugin：为代码注入全局成员，可以以此判断运行环境，如 process.env.NODE.ENV</p> <p>4.Tree Shaking：可以自动检测出代码中未引用的代码并移除掉（Side Effects：允许通过配置的方式去标识代码中是否有副作用，从而为 Tree Shaking 提供更大的压缩空间）</p> <p>5.Code Splitting：代码分割，防止 bundle 体积过大浪费流量和带宽，将模板打包到不同的 bundle 提高应用响应速度</p> <p>在package.json 为 build 定义 webpack --config webpack.prod.js</p> <p>33.Loaer和Plugin
+Loader：专注实现资源模块的转换和加载（编译转换代码、文件操作、代码检查）</p> <p>Plugin：解决其他自动化工作（打包之前清除 dist 目录、拷贝静态文件、压缩代码等等）</p> <p>34.webpack公共、开发、生产环境配置方案(复刻vue-cli-service)
+vue-cli-service 是包含 webpack 等工具的黑盒</p> <p>webpack.common.js 公共环境配置：</p> <p>module.exports = {
+entry: './src/main.js', // 输入
+output: {
+filename: 'bundle.js', // 输出
+// path: path.join(__dirname, 'output') // 输出目录(绝对路径 通过path转换)
+},
+module: { // 用于配置加载器
+rules: [
+{
+test: /.vue$/, // 匹配打包过程遇到的文件路径
+use: [ // 指定匹配到的文件使用到loader
+// 当我们配置多个loader 执行顺序从下至上
+'vue-loader' // 将Vue组件编译成普通的JavaScript模块
+]
+},
+{
+test: /.js$/, // 它会应用到普通的 <code>.js</code> 文件以及 <code>.vue</code> 文件中的 <code>&lt;script&gt;</code> 块
+use: {
+loader: 'babel-loader',
+// webpack 仅仅是对模块完成打包工作，所以它才会对代码中的 import 和 export 做一些
+// 相应的转换，除此之外并不能去转换代码中的其他 ES6 特性
+// babel 只是转换JS代码的平台
+//需要基于不同插件转换代码中的具体特性 @babel/plugin-transform-modules-commonjs
+options: {
+presets: ['@babel/preset-env'] // 使用preset-env插件集合
+}
+}
+},
+{
+test: /.css$/, // 它会应用到普通的 <code>.css</code> 文件以及 <code>.vue</code> 文件中的 <code>&lt;style&gt;</code> 块
+use: [
+'vue-style-loader',
+'css-loader' // ①编译转化类 Loader
+]
+},
+// 在样式文件中导入资源模块的两种常见方法：
+// 1）main.css
+// background-image: url(background.png)
+// 2）import指令加载其他样式资源模块
+// @import url(reset.css)
+// @import 'reser.css' // css-loader 支持sass/less风格的@import指令
+{
+test: /.less$/, // 配置 less-loader ，应用到 .less 文件，转换成 css 代码
+use: [
+'style-loader', // creates style nodes from JS strings
+'css-loader', // translates CSS into CommonJS
+'less-loader' // compiles Less to CSS
+]
+},
+{
+test: /.(png|jpe?g|gif)$/,
+use: {
+// 文件资源加载器：通过拷贝物理文件的形式去处理文件资源
+// loader: 'file-loader', // ②文件操作类 Loader
+// 通过 DataUrls 形式去表示文件 （这种URL当中的文本已经包含了文件内容
+// 不用发送 http 请求，图片/字体 以base64编码后的结果表示）
+loader: 'url-loader',
+// 小文件使用 Data Urls，减少请求次数；大文件单独存放，提高加载速度
+options: {
+// 小于10kb的文件转化为Data URLs 嵌入代码中
+limit: 10 * 1024, // 超出10kb的文件单独提取存放
+name: 'img/[name].[ext]'
+}
+}
+},
+{
+test: /.(js|vue)$/, // 配置 eslint-loader 检查代码规范，应用到 .js 和 .vue 文件
+use: {
+loader: 'eslint-loader', // ③代码检查类 Loader
+options: {
+formatter: require('eslint-friendly-formatter') // 默认的错误提示方式
+}
+},
+enforce: 'pre', // 编译前检查
+exclude: /node_modules/, // 不检查的文件
+include: [__dirname + '/src'], // 要检查的目录
+},
+]},
+plugins: [ // 用于配置插件
+new webpack.DefinePlugin({ // 为代码注入全局成员
+// 值要求的是一个代码片段
+BASE_URL: JSON.stringify('')
+}),
+new VueLoaderPlugin(), // 配合 vue-loader 使用，用于编译转换 .vue 文件
+new HtmlWebpackPlugin({ // 用于生成 index.html 文件
+title: 'sgh vue project', // 设置html标题
+// meta: { // 设置对象中的元数据标签
+//   viewport: 'width=device-width'
+// },
+template: './public/index.html' // 使用的模板地址
+})
+]}
+}
+webpack.dev.js 开发环境配置：</p> <p>const webpack = require('webpack')
+const merge = require('webpack-merge') // 使用merge方法合并配置
+const common = require('./webpack.common') // 导入公共配置</p> <p>// webpack4 不同模式预设配置
+module.exports = merge(common, {
+mode: 'development', // 开发依赖
+// cheap-eval-module-source-map 能定位到原文件名，且显示内容为经过babel-loader转换后的代码
+// 点击调试能定位到行（缺少列信息）,只能跳转到行首
+devtool: 'cheap-eval-module-source-map', // 开启 source-map
+devServer: {
+host: 'localhost',
+port: '2020',
+open: true, // 启动服务时，自动打开浏览器
+hot: true, // 开启热更新功能
+contentBase: 'public' // 额外指明静态资源目录
+},
+plugins: [
+new webpack.HotModuleReplacementPlugin() // HMR热更新
+]
+})
+webpack.prod.js 生产环境配置：</p> <p>const common = require('./webpack.common') // 导入公共配置
+const merge = require('webpack-merge') // 使用merge方法合并配置
+const { CleanWebpackPlugin } = require('clean-webpack-plugin') // 打包之前清除 dist 目录
+const CopyWebpackPlugin = require('copy-webpack-plugin') // 拷贝静态文件至输出目录</p> <p>module.exports = merge(common, {
+mode: 'none',
+output: {
+filename: 'js/bundle-[contenthash:8].js' // 文件级别的 不同的文件就有不同的hash值 指定8位
+},
+plugins: [
+new CleanWebpackPlugin(), // 自动清除目录
+// 项目中一些不需要参加构建的静态文件，webpack在打包时一并将它们复制到输出目录
+new CopyWebpackPlugin(['public']) // 通配符或'目录'
+]
+})
+35.WebpackDevServer代理API</p> <p>我们需要请求的接口地址没有/api。weboack-dev-server支持通过配置的方式添加代理服务</p> <p>目标：将GitHub API 代理到开发服务器</p> <p>...</p> <p>module.exports = {
+...
+devServer: {
+...
+proxy: { // 添加代理服务配置
+'/api': { // 需要被代理的请求路径前缀
+// http://localhost:8080/api/users -&gt; https://api.github.com/api/users
+target: 'https://api.github.com', // 代理目标
+// 但是我们需要请求的接口地址没有/api
+// http://localhost:8080/api/users -&gt; https://api.github.com/users
+pathRewrite: { // 代理路径重写
+'^/api': '' // 以api开头的替换为空
+},
+// 不能使用 localhost:8080 作为请求 GitHub 的主机名
+changeOrigin: true // 以实际代理请求的主机名请求
+}
+}
+},
+...
+}
+36.开发Loader的思路
+过程有点类似一个工作管道，可以在这个过程一次使用多个 Loader</p> <p>module.exports = source =&gt; { return }
+可以直接在项目根目录新建 test-loader.js （完成后也可以发布到 npm 作为独立模块使用）
+这个文件需要导出一个函数，这个函数就是我们的 loader 对所加载到的资源的处理过程
+函数输入为 加载到的资源，输出为 加工后的结果
+输出结果可以有两种形式：第一，输出标准的 JS 代码，让打包结果的代码能正常执行；第二，输出处理结果，交给下一个 loader 进一步处理成 JS 代码
+在 webpack.config.js 中使用 loader，配置 module.rules ，其中 use 除了可以使用模块名称，也可以使用模块路径rules: [{test: '', use: ['名称', '路径']}]
+37.开发Plugin的思路
+相比 Loader.plugin 拥有更宽的能力范围：Loader 只是加载模块的环节工作，而插件的作用范围几乎触及到 Webpack 工作的每一个环节</p> <p>Class MyPlugin {
+apply(compiler) {
+compiler.hooks.emit.tap(名称, compilation =&gt; {函数内容})
+}
+}
+Plugin 通过钩子机制实现(类似于事件)，为了便于插件的扩展，Webpack 几乎给每一个环节都埋下了一个钩子，我们在去开发插件时就可以通过往这些不同的节点上挂载不同的任务。
+Webpack 要求每一个插件必须是一个函数或者是一个包含 apply 方法的对象。一般把这个插件定义为一个类型，然后在这个类型中定义一个 apply 方法。使用就是通过这个类型构建一个实例去使用。
+apply 方法接收一个 compiler 参数，包含了这次构建的所有配置信息，通过这个对象注册钩子函数
+通过 compiler.hooks.emit.tap 注册钩子函数（emit也可以为其他事件），钩子函数第一个参数为插件名称，第二个参数 compilation 为此次打包的上下文，根据 compilation.assets 就可以拿到此次打包的资源，做一些相应的逻辑处理
+38.webpack与grunt和gulp的不同
+三者都是前端构建工具，grunt和gulp在早期比较流行，现在webpack相对来说比较主流，不过一些轻量化的任务还是会用gulp来处理，比如单独打包CSS文件等</p> <p>grunt 和 gulp 是基于任务和流（Task、Stream）的。类似jQuery，找到一个（或一类）文件，对其做一系列链式操作，更新流上的数据， 整条链式操作构成了一个任务，多个任务就构成了整个web的构建流程</p> <p>webpack是基于入口的。webpack会自动地递归解析入口所需要加载的所有资源文件，然后用不同的Loader来处理不同的文件，用Plugin来扩展webpack功能</p></div></div></div> <footer class="footer" data-v-3d9deeb8><div class="footer-left-wrap" data-v-3d9deeb8><ul class="contact" data-v-3d9deeb8></ul></div> <div class="footer-right-wrap" data-v-3d9deeb8><ul class="copyright" data-v-3d9deeb8></ul></div></footer></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.29e3e174.js" defer></script><script src="/assets/js/4.7296a041.js" defer></script><script src="/assets/js/8.58afedc8.js" defer></script><script src="/assets/js/65.ffbfcdc8.js" defer></script>
+  </body>
+</html>
