@@ -1,0 +1,32 @@
+import{_ as n,c as a,a as i,o as e}from"./app-EotSfhna.js";const p={};function l(t,s){return e(),a("div",null,[...s[0]||(s[0]=[i(`<h1 id="fastapi模块化" tabindex="-1"><a class="header-anchor" href="#fastapi模块化"><span>FastAPI模块化</span></a></h1><p>本文介绍如何基于 APIRouter 对 FastAPI 项目进行模块化组织，并给出一个以工厂模式创建的项目结构示例。</p><p>我们观察官网的示例会发现启动一个项目都是通过简简单单的一个 py 文件来完成请求和响应内容，但是实际工程的模块往往是庞大和复杂的。</p><p>当我们基于 Django 框架开发 Web 应用时，能够通过命令创建出一个项目，并且整个项目结构清晰、规整，而类似 Flask、FastAPI 这些轻量级的框架项目组织需要我们自己来做，清晰、规范和合理的项目组织结构，对开发的效率和质量都有很大的提高。</p><p>FastAPI 提供了类似 Flask 中 Blueprints 功能的工具，它可以在保持灵活性的同时构建应用。子包中的每一个模块需要解耦开，此时可以使用 APIRouter 进行管理，可以理解为小型的 FastAPI 应用，然后将各个部分组合到 FastAPI 主体上即可。</p><p>依据此原理，下面我们构建工厂模式创建 FastAPI 项目示例 myFastAPI，供大家借鉴。</p><h2 id="项目结构" tabindex="-1"><a class="header-anchor" href="#项目结构"><span>项目结构</span></a></h2><p>我们把项目划分为5个目录，分别为 api、extensions、settings、utils 和 tests。当然，大家可以对这些目录做适当的裁剪或修订。</p><ul><li>api：项目框架核心，包含整体项目逻辑和路由视图，示例 myFastAPI 中有 shopdemo 和 websocketdemo 两个子项目，而在 shopdemo 子项目下有 goods 和 home 两个模块，其下有各自的路由视图，分开管理，并通过 api 包中的 <strong>init</strong>.py 创建的工厂模式生成应用对象统一注册使用。</li><li>extensions：包含项目依赖的一些扩展包，如日志管理。</li><li>settings：包含项目的配置文件，如测试环境配置、生产环境等。</li><li>utils：工具目录，一般用于存放我们抽象出来的公共类或根据业务场景抽象出来可复用的一些工具类。</li><li>tests：测试案例，项目代码质量检测的脚本，这部分主要包含我们开发过程中的一些测试案例，用于对我们的代码进行单元测试。</li></ul><p>该项目实例是基于 pipenv 构建的，所以通过 Pipfile 和 Pipfile.lock 文件进行依赖的管理。在项目工程目录下，使用命令行执行命令 <code>tree -FC</code>，即可显示如下的项目树结构：</p><div class="language-text line-numbers-mode" data-highlighter="shiki" data-ext="text" style="--shiki-light:#393a34;--shiki-dark:#dbd7caee;--shiki-light-bg:#ffffff;--shiki-dark-bg:#121212;"><pre class="shiki shiki-themes vitesse-light vitesse-dark vp-code"><code><span class="line"><span>├── Pipfile</span></span>
+<span class="line"><span>├── Pipfile.lock</span></span>
+<span class="line"><span>├── README.md</span></span>
+<span class="line"><span>├── api/</span></span>
+<span class="line"><span>│   ├── __init__.py*                # 创建工厂模式生成应用对象</span></span>
+<span class="line"><span>│   ├── shopdemo/                   # 子项目shopdemo</span></span>
+<span class="line"><span>│   │   ├── __init__.py*           # 路由汇总，包括该子项目下所有模块的路由</span></span>
+<span class="line"><span>│   │   ├── database.py*</span></span>
+<span class="line"><span>│   │   ├── goods/                 # goods模块</span></span>
+<span class="line"><span>│   │   │   ├── __init__.py*</span></span>
+<span class="line"><span>│   │   │   └── goods.py*         # goods模块的路由视图</span></span>
+<span class="line"><span>│   │   ├── home/                  # home模块</span></span>
+<span class="line"><span>│   │   │   ├── __init__.py*</span></span>
+<span class="line"><span>│   │   │   └── home.py*          # home模块的路由视图</span></span>
+<span class="line"><span>│   │   └── schemas.py*</span></span>
+<span class="line"><span>│   └── websocketdemo/</span></span>
+<span class="line"><span>│       ├── __init__.py*</span></span>
+<span class="line"><span>│       └── chat.py*</span></span>
+<span class="line"><span>├── extensions/</span></span>
+<span class="line"><span>│   ├── __init__.py*</span></span>
+<span class="line"><span>│   └── logger.py*</span></span>
+<span class="line"><span>├── main.py*                         #程序入口</span></span>
+<span class="line"><span>├── settings/</span></span>
+<span class="line"><span>│   ├── __init__.py*</span></span>
+<span class="line"><span>│   └── development_config.py*</span></span>
+<span class="line"><span>├── tests/</span></span>
+<span class="line"><span>│   ├── __init__.py*</span></span>
+<span class="line"><span>│   └── test_home.py*</span></span>
+<span class="line"><span>└── utils/</span></span>
+<span class="line"><span>    ├── __init__.py*</span></span>
+<span class="line"><span>    ├── custom_exc.py*</span></span>
+<span class="line"><span>    └── response_code.py*</span></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>`,11)])])}const c=n(p,[["render",l]]),r=JSON.parse('{"path":"/article/41v5xrbn.html","title":"FastAPI模块化","lang":"zh-CN","frontmatter":{"title":"FastAPI模块化","createTime":"2025/01/21 10:11:04","permalink":"/article/41v5xrbn.html","watermark":true},"headers":[],"readingTime":{"minutes":2.55,"words":766},"git":{"updatedTime":1793277857000,"contributors":[{"name":"matiastang","username":"matiastang","email":"52565576+matiastang@users.noreply.github.com","commits":1,"avatar":"https://avatars.githubusercontent.com/matiastang?v=4","url":"https://github.com/matiastang"}]},"filePathRelative":"notes/fastapi/FastAPI模块化.md","categoryList":[{"id":"4358b5","sort":10000,"name":"notes"},{"id":"8ea922","sort":10026,"name":"fastapi"}]}');export{c as comp,r as data};
